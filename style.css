@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 body {
-    font-family: 'Tajawal', sans-serif;
+    font-family: 'Tajawal', 'Inter', sans-serif;
     -webkit-tap-highlight-color: transparent;
 }
 
+/* Scrollbar Utility */
 .hide-scrollbar::-webkit-scrollbar {
     display: none;
 }
@@ -12,4 +13,50 @@ body {
 .hide-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+/* Light Mode Overrides */
+html:not(.dark) body {
+    background-color: #f8fafc;
+    color: #0f172a;
+}
+
+/* Light Mode Card Styling */
+html:not(.dark) .bg-slate-900,
+html:not(.dark) .bg-slate-950 {
+    background-color: #ffffff;
+    color: #0f172a;
+}
+
+html:not(.dark) .border-slate-800,
+html:not(.dark) .border-slate-700 {
+    border-color: #e2e8f0;
+}
+
+html:not(.dark) .text-slate-100,
+html:not(.dark) .text-slate-200,
+html:not(.dark) .text-slate-300,
+html:not(.dark) .text-white {
+    color: #0f172a;
+}
+
+html:not(.dark) .text-slate-400,
+html:not(.dark) .text-slate-500 {
+    color: #64748b;
+}
+
+html:not(.dark) input,
+html:not(.dark) select,
+html:not(.dark) textarea {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    border-color: #cbd5e1;
+}
+
+html:not(.dark) header {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+html:not(.dark) .bg-slate-950\/80 {
+    background-color: #f1f5f9;
 }
