@@ -1,3 +1,18 @@
+const wilayasList = [
+    "01 - أدرار", "02 - الشلف", "03 - الأغواط", "04 - أم البواقي", "05 - باتنة",
+    "06 - بجاية", "07 - بسكرة", "08 - بشار", "09 - البليدة", "10 - البويرة",
+    "11 - تمنراست", "12 - تبسة", "13 - تلمسان", "14 - تيارت", "15 - تيزي وزو",
+    "16 - الجزائر", "17 - الجلفة", "18 - جيجل", "19 - سطيف", "20 - سعيدة",
+    "21 - سكيكدة", "22 - سيدي بلعباس", "23 - عنابة", "24 - قالمة", "25 - قسنطينة",
+    "26 - المدية", "27 - مستغانم", "28 - المسيلة", "29 - معسكر", "30 - ورقلة",
+    "31 - وهران", "32 - البيض", "33 - إليزي", "34 - برج بوعريريج", "35 - بومرداس",
+    "36 - الطارف", "37 - تندوف", "38 - تسمسيلت", "39 - الوادي", "40 - خنشلة",
+    "41 - سوق أهراس", "42 - تيبازة", "43 - ميلة", "44 - عين الدفلى", "45 - النعامة",
+    "46 - عين تموشنت", "47 - غرداية", "48 - غليزان", "49 - المغير", "50 - المنيعة",
+    "51 - أولاد جلال", "52 - برج باجي مختار", "53 - بني عباس", "54 - تيميمون", "55 - توقرت",
+    "56 - جانت", "57 - إن صالح", "58 - إن قزام"
+];
+
 const translations = {
     ar: {
         brandName: "سيارتي بروكر",
@@ -23,6 +38,8 @@ const translations = {
         addPostBtn: "إضافة إعلان قطعة جديد للبيع",
         searchPlaceholder: "ابحث باسم القطعة، الملاحظات...",
         allBrands: "جميع الماركات",
+        allWilayas: "جميع الولايات (58)",
+        selectWilaya: "اختر الولاية *",
         currentUser: "المستخدم الحالي:",
         chatTitle: "المحادثات المباشرة",
         chatDesc: "التواصل المباشر بين المشترين، البائعين والإدارة",
@@ -69,7 +86,7 @@ const translations = {
         commentsTitle: "التعليقات والاستفسارات:",
         writeCommentPlaceholder: "اكتب استفسارك...",
         approvedStatus: "موافق عليه (Approved)",
-        noPosts: "لا توجد إعلانات معتمدة متوفرة حالياً.",
+        noPosts: "لا توجد إعلانات معتمدة متوافقة مع شروط البحث.",
         noRequests: "لا توجد طلبات معلقة.",
         itemPrice: "سعر القطعة:",
         protectionFee: "عمولة حماية الوسيط (8%):",
@@ -103,6 +120,8 @@ const translations = {
         addPostBtn: "Add New Spare Part Listing",
         searchPlaceholder: "Search by part title, notes...",
         allBrands: "All Brands",
+        allWilayas: "All Wilayas (58)",
+        selectWilaya: "Select Wilaya *",
         currentUser: "Current User:",
         chatTitle: "Direct Messages",
         chatDesc: "Direct communication between buyers, sellers, and administration",
@@ -149,7 +168,7 @@ const translations = {
         commentsTitle: "Comments & Inquiries:",
         writeCommentPlaceholder: "Write your inquiry...",
         approvedStatus: "Approved",
-        noPosts: "No approved listings available at the moment.",
+        noPosts: "No approved listings matched your search criteria.",
         noRequests: "No pending requests.",
         itemPrice: "Part Price:",
         protectionFee: "Broker Protection Fee (8%):",
@@ -184,6 +203,7 @@ const db = {
             status: 'approved',
             created_at: '2026-10-29',
             brand: 'Renault',
+            wilaya: '16 - الجزائر',
             img: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=400&q=80'
         },
         {
@@ -195,6 +215,7 @@ const db = {
             status: 'approved',
             created_at: '2026-10-30',
             brand: 'Peugeot',
+            wilaya: '31 - وهران',
             img: 'https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=400&q=80'
         },
         {
@@ -206,6 +227,7 @@ const db = {
             status: 'pending',
             created_at: '2026-10-30',
             brand: 'Volkswagen',
+            wilaya: '25 - قسنطينة',
             img: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&q=80'
         }
     ],
@@ -228,12 +250,33 @@ const db = {
 };
 
 window.addEventListener('DOMContentLoaded', () => {
+    populateWilayasDropdowns();
     applyTheme(currentTheme);
     applyLanguage(currentLang);
     lucide.createIcons();
     loadSavedUsers();
     checkSavedSession();
 });
+
+function populateWilayasDropdowns() {
+    const filterSelect = document.getElementById('filter-wilaya');
+    const postSelect = document.getElementById('post-wilaya');
+
+    wilayasList.forEach(w => {
+        if (filterSelect) {
+            const opt = document.createElement('option');
+            opt.value = w;
+            opt.innerText = w;
+            filterSelect.appendChild(opt);
+        }
+        if (postSelect) {
+            const opt = document.createElement('option');
+            opt.value = w;
+            opt.innerText = w;
+            postSelect.appendChild(opt);
+        }
+    });
+}
 
 function toggleTheme() {
     currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
@@ -348,12 +391,12 @@ function toggleAuthMode(mode) {
     if (mode === 'login') {
         formLogin.classList.remove('hidden');
         formRegister.classList.add('hidden');
-        btnLogin.className = "flex-1 py-2 text-xs font-bold rounded-lg transition bg-brand-600 text-white";
+        btnLogin.className = "flex-1 py-2 text-xs font-bold rounded-lg transition bg-brand-600 text-white shadow";
         btnRegister.className = "flex-1 py-2 text-xs font-bold rounded-lg transition text-slate-400 hover:text-white";
     } else {
         formLogin.classList.add('hidden');
         formRegister.classList.remove('hidden');
-        btnRegister.className = "flex-1 py-2 text-xs font-bold rounded-lg transition bg-brand-600 text-white";
+        btnRegister.className = "flex-1 py-2 text-xs font-bold rounded-lg transition bg-brand-600 text-white shadow";
         btnLogin.className = "flex-1 py-2 text-xs font-bold rounded-lg transition text-slate-400 hover:text-white";
     }
 }
@@ -495,17 +538,35 @@ function renderAuthHeader() {
     `;
 }
 
+function applyFilters() {
+    renderProducts();
+}
+
 function renderProducts() {
     const grid = document.getElementById('product-grid');
-    const approvedPosts = db.posts.filter(p => p.status === 'approved');
+    const keyword = document.getElementById('filter-keyword')?.value.toLowerCase().trim() || '';
+    const selectedBrand = document.getElementById('filter-brand')?.value || '';
+    const selectedWilaya = document.getElementById('filter-wilaya')?.value || '';
     const t = translations[currentLang];
 
-    if (approvedPosts.length === 0) {
+    const filteredPosts = db.posts.filter(p => {
+        const isApproved = p.status === 'approved';
+        const matchesBrand = !selectedBrand || p.brand === selectedBrand;
+        const matchesWilaya = !selectedWilaya || p.wilaya === selectedWilaya;
+        const matchesKeyword = !keyword || 
+            p.title.toLowerCase().includes(keyword) || 
+            p.description.toLowerCase().includes(keyword) ||
+            p.brand.toLowerCase().includes(keyword);
+
+        return isApproved && matchesBrand && matchesWilaya && matchesKeyword;
+    });
+
+    if (filteredPosts.length === 0) {
         grid.innerHTML = `<p class="col-span-full text-center py-10 text-slate-500 text-xs">${t.noPosts}</p>`;
         return;
     }
 
-    grid.innerHTML = approvedPosts.map(p => {
+    grid.innerHTML = filteredPosts.map(p => {
         const postComments = db.comments.filter(c => c.post_id === p.id);
         return `
             <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition shadow-lg flex flex-col justify-between">
@@ -515,6 +576,10 @@ function renderProducts() {
                         <span class="absolute top-2 right-2 bg-emerald-500/90 text-slate-950 text-[10px] font-bold px-2 py-1 rounded-lg">
                             ${t.approvedStatus}
                         </span>
+                        ${p.wilaya ? `
+                        <span class="absolute bottom-2 right-2 bg-slate-900/90 text-amber-400 text-[10px] font-bold px-2 py-1 rounded-lg border border-slate-700 flex items-center gap-1">
+                            <i data-lucide="map-pin" class="w-3 h-3"></i> ${p.wilaya}
+                        </span>` : ''}
                     </div>
                     <div class="p-4 space-y-2">
                         <div class="flex justify-between items-center text-[11px] text-slate-400">
@@ -657,6 +722,7 @@ function handleCreatePostSubmit(e) {
     e.preventDefault();
     const title = document.getElementById('post-title').value;
     const price = parseFloat(document.getElementById('post-price').value);
+    const wilaya = document.getElementById('post-wilaya').value;
     const description = document.getElementById('post-description').value;
 
     const newPostId = 100 + db.posts.length + 1;
@@ -666,6 +732,7 @@ function handleCreatePostSubmit(e) {
         title,
         description,
         price,
+        wilaya: wilaya || '16 - الجزائر',
         status: 'pending',
         created_at: new Date().toISOString().split('T')[0],
         brand: currentLang === 'ar' ? 'قطع عامة' : 'General Parts',
@@ -710,7 +777,7 @@ function renderAdminRequests() {
             <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 text-xs">
                 <div>
                     <span class="font-bold text-white text-sm block">${post.title}</span>
-                    <span class="text-slate-400">${t.seller} ${post.vendeur_name} | Price: <span class="font-mono text-amber-400 font-bold">${post.price.toLocaleString()} ${t.dzdCurrency}</span></span>
+                    <span class="text-slate-400">${t.seller} ${post.vendeur_name} | الولاية: ${post.wilaya || 'غير محددة'} | Price: <span class="font-mono text-amber-400 font-bold">${post.price.toLocaleString()} ${t.dzdCurrency}</span></span>
                     <p class="text-slate-500 text-[11px] mt-1">${post.description}</p>
                 </div>
                 <div class="flex items-center gap-2 w-full md:w-auto">
@@ -763,7 +830,7 @@ function openCheckoutModal(postId) {
     document.getElementById('checkout-details-body').innerHTML = `
         <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
             <span class="text-white font-bold block">${post.title}</span>
-            <span class="text-slate-400 block">${t.seller} ${post.vendeur_name}</span>
+            <span class="text-slate-400 block">${t.seller} ${post.vendeur_name} (${post.wilaya || 'غير محددة'})</span>
         </div>
         <div class="space-y-1.5 pt-2 border-t border-slate-800">
             <div class="flex justify-between text-slate-300">
@@ -820,8 +887,4 @@ function showToast(msg, type = 'success') {
     container.appendChild(toast);
     lucide.createIcons();
     setTimeout(() => toast.remove(), 3500);
-}
-
-function applyFilters() {
-    renderProducts();
 }
