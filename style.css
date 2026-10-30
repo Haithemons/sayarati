@@ -13,58 +13,134 @@ body {
     scrollbar-width: none;
 }
 
-/* بطاقات الزجاج الشفاف Glassmorphism */
+/* بطاقات الزجاج الشفاف Glassmorphism للوضع الداكن */
 .glass-box {
-    background: rgba(15, 23, 42, 0.45);
+    background: rgba(15, 23, 42, 0.75);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
 }
 
 .glass-input-box {
-    background: rgba(15, 23, 42, 0.55);
+    background: rgba(15, 23, 42, 0.6);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .glass-input-box:focus-within {
-    border-color: #0284c7;
+    border-color: #f59e0b;
     background: rgba(15, 23, 42, 0.85);
 }
 
-/* الوضع الفاتح */
+/* ==================== إصلاح الوضع المضيء (LIGHT MODE COMPLETE FIX) ==================== */
 html:not(.dark) body {
-    background-color: #f8fafc;
-    color: #0f172a;
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
 }
-html:not(.dark) .glass-box {
-    background: rgba(255, 255, 255, 0.65);
-    border: 1px solid rgba(0, 0, 0, 0.15);
+
+/* الشريط الجانبي في الوضع المضيء */
+html:not(.dark) aside#main-header {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
 }
-html:not(.dark) .glass-input-box {
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(0, 0, 0, 0.15);
+
+/* البانر العلوي (Banner) في الوضع المضيء */
+html:not(.dark) main .rounded-3xl.bg-gradient-to-r {
+    background: linear-gradient(to right, #ffffff, #f8fafc, #f1f5f9) !important;
+    border-color: #cbd5e1 !important;
 }
+html:not(.dark) main .rounded-3xl.bg-gradient-to-r h1 {
+    color: #0f172a !important;
+}
+html:not(.dark) main .rounded-3xl.bg-gradient-to-r p {
+    color: #475569 !important;
+}
+
+/* كاردات المنتجات والبحث في الوضع المضيء */
 html:not(.dark) .bg-slate-900,
-html:not(.dark) .bg-slate-950 {
-    background-color: #ffffff;
-    color: #0f172a;
+html:not(.dark) .bg-slate-900\/90,
+html:not(.dark) .bg-slate-900\/95 {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
 }
-html:not(.dark) .border-slate-800,
-html:not(.dark) .border-slate-700 {
-    border-color: #e2e8f0;
+
+html:not(.dark) .bg-slate-950,
+html:not(.dark) .bg-slate-950\/50 {
+    background-color: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+    color: #0f172a !important;
 }
+
+/* ألوان النصوص العامة في الوضع المضيء */
+html:not(.dark) .text-white,
 html:not(.dark) .text-slate-100,
 html:not(.dark) .text-slate-200,
-html:not(.dark) .text-slate-300,
-html:not(.dark) .text-white {
-    color: #0f172a;
+html:not(.dark) .text-slate-300 {
+    color: #0f172a !important;
 }
+
 html:not(.dark) .text-slate-400,
 html:not(.dark) .text-slate-500 {
-    color: #64748b;
+    color: #475569 !important;
 }
-html:not(.dark) header {
-    background-color: rgba(255, 255, 255, 0.9);
+
+/* حقول الإدخال والبحث والقوائم المنسدلة */
+html:not(.dark) input,
+html:not(.dark) select,
+html:not(.dark) textarea {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) input::placeholder {
+    color: #94a3b8 !important;
+}
+
+/* إبقاء النصوص الذهبية مميزة وواضحة */
+html:not(.dark) .text-amber-400 {
+    color: #b45309 !important;
+}
+
+html:not(.dark) .glass-box {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    color: #0f172a !important;
+}
+
+/* ==================== إصلاح قسم التعليقات في الوضع المضيء ==================== */
+html:not(.dark) .bg-slate-950 input,
+html:not(.dark) .bg-slate-900 input,
+html:not(.dark) input[placeholder="اكتب استفسارك..."],
+html:not(.dark) input[placeholder="Write your inquiry..."] {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .bg-slate-950 input::placeholder,
+html:not(.dark) input[placeholder="اكتب استفسارك..."]::placeholder,
+html:not(.dark) input[placeholder="Write your inquiry..."]::placeholder {
+    color: #94a3b8 !important;
+}
+
+/* خلفية صندوق التعليقات داخل كارد المنتج في الوضع المضيء */
+html:not(.dark) .bg-slate-950.p-2\.5.rounded-xl {
+    background-color: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+    color: #0f172a !important;
+}
+
+/* بطاقات التعليقات السابقة في الوضع المضيء */
+html:not(.dark) .bg-slate-900\/80 {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+}
+
+html:not(.dark) .bg-slate-900\/80 span.text-slate-300 {
+    color: #334155 !important;
 }
