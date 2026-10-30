@@ -37,10 +37,10 @@
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen pb-20 md:pb-6 transition-colors duration-300 selection:bg-brand-500 selection:text-white">
 
-    <!-- ==================== AUTH PORTAL SCREEN (شاشة التسجيل الزجاجية مع السيارة وقطع الغيار الـ 3D) ==================== -->
-    <div id="auth-portal" class="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 bg-cover bg-center relative" style="background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.75)), url('watermarked_img_8706583782182684989.jpg');">
+    <!-- ==================== AUTH PORTAL SCREEN (شاشة التسجيل الزجاجية مع خلفية السيارة) ==================== -->
+    <div id="auth-portal" class="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 bg-cover bg-center relative" style="background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.75)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80');">
         
-        <!-- عنوان الشعار والمنصة في أعلى شاشة التسجيل[cite: 5] -->
+        <!-- عنوان الشعار والمنصة في أعلى شاشة التسجيل -->
         <div class="text-center space-y-1 mb-6 text-white relative z-10">
             <h1 data-i18n="brandName" class="text-3xl md:text-4xl font-black text-cyan-400 drop-shadow-md flex items-center justify-center gap-2">
                 سيارتي <i data-lucide="wrench" class="w-8 h-8 text-slate-200"></i> بروكر
@@ -48,10 +48,10 @@
             <p data-i18n="authSubtitle" class="text-sm font-semibold text-slate-200 drop-shadow">منصة وسيط قطع الغيار بالجزائر</p>
         </div>
 
-        <!-- البطاقة الزجاجية المعلقة بنفس الشكل المطلوب بالضبط[cite: 5] -->
+        <!-- البطاقة الزجاجية المعلقة -->
         <div class="glass-box rounded-3xl w-full max-w-sm p-6 md:p-7 space-y-5 relative text-slate-100 shadow-2xl">
             
-            <!-- زر التبويب العلوي المحفور بكلمة Login / Register[cite: 5] -->
+            <!-- زر التبويب العلوي المحفور بكلمة Login / Register -->
             <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-slate-900/90 border border-white/20 px-7 py-1 rounded-full shadow-lg">
                 <h2 id="portal-title-badge" class="text-xs font-extrabold tracking-wider text-slate-100">Login</h2>
             </div>
@@ -72,7 +72,7 @@
                 </div>
             </div>
 
-            <!-- LOGIN FORM[cite: 5] -->
+            <!-- LOGIN FORM -->
             <form id="form-login" onsubmit="handleLoginSubmit(event)" class="space-y-3.5 pt-1">
                 <div class="glass-input-box rounded-2xl px-3.5 py-2 flex items-center justify-between transition">
                     <input type="email" id="login-email" required placeholder="Username" class="w-full bg-transparent text-slate-100 text-xs outline-none placeholder:text-slate-300">
