@@ -1,3 +1,169 @@
+const translations = {
+    ar: {
+        brandName: "سيارتي بروكر",
+        brandTagline: "منصة الوسيط المعتمد لقطع الغيار (الجزائر)",
+        authSubtitle: "سجل الدخول أو أنشئ حساباً للوصول إلى المنصة",
+        loginTab: "تسجيل الدخول",
+        registerTab: "حساب جديد",
+        emailLabel: "البريد الإلكتروني",
+        passwordLabel: "كلمة المرور",
+        usernameLabel: "اسم المستخدم / المؤسسة",
+        loginBtn: "دخول إلى المنصة",
+        registerBtn: "إنشاء الحساب وتأكيده",
+        registerNote: "ملاحظة: بحسابك الجديد يمكنك تصفح الإعلانات، طلب قطع الغيار، ورفع إعلاناتك للبيع بكل أريحية.",
+        authFooter: "منصة الوسيط التجاري المعتمد لحماية التعاملات المالية بالجزائر د.ج",
+        navCatalog: "الإعلانات والقطع",
+        navMessages: "الرسائل",
+        navRatings: "التقييمات",
+        navEscrow: "الضمان والوساطة",
+        navAdmin: "لوحة الأدمن",
+        bannerBadge: "المعاملات بالدينار الجزائري (د.ج / DZD) مع حماية 100%",
+        bannerTitle: "منصة الوسيط التجاري لبيع وشراء قطع غيار السيارات في الجزائر",
+        bannerDesc: "نربط البائعين والمشترين مع ضمان اعتماد الإدارة للمنشورات وتأمين المبالغ حتى المعاينة.",
+        addPostBtn: "إضافة إعلان قطعة جديد للبيع",
+        searchPlaceholder: "ابحث باسم القطعة، الملاحظات...",
+        allBrands: "جميع الماركات",
+        currentUser: "المستخدم الحالي:",
+        chatTitle: "المحادثات المباشرة",
+        chatDesc: "التواصل المباشر بين المشترين، البائعين والإدارة",
+        chatInputPlaceholder: "اكتب رسالتك هنا...",
+        sendBtn: "إرسال",
+        ratingsTitle: "التقييمات والمراجعات",
+        ratingsDesc: "تقييم تجربة التعامل بين البائعين والمشترين لحفظ المصداقية.",
+        addRatingBtn: "إضافة تقييم جديد",
+        escrowTitle: "كيف يعمل نظام الضمان والوساطة المالي بالدينار الجزائري؟",
+        escrowDesc: "نضمن عدم تحويل الأموال للمورد حتى يستلم المشتري القطعة وتكون متطابقة.",
+        escrowStep1Title: "1. النشر والموافقة",
+        escrowStep1Desc: "ينشر البائع القطعة بسعر د.ج، وتراجعها الإدارة لتغيير الحالة إلى Approved.",
+        escrowStep2Title: "2. إيداع المبلغ",
+        escrowStep2Desc: "يدفع المشتري القيمة + عمولة الوساطة إلى حساب منصة \"سيارتي بروكر\".",
+        escrowStep3Title: "3. المعاينة والشحن",
+        escrowStep3Desc: "يستلم المشتري القطعة ويعاينها للتأكد من سلامتها ومطابقتها.",
+        escrowStep4Title: "4. الإفراج عن DZD",
+        escrowStep4Desc: "تحول المنصة مستحقات البائع بالدينار الجزائري وتقتطع نسبة الوساطة.",
+        adminTitle: "لوحة تحكم الأدمن (Admin Dashboard)",
+        adminEmail: "البريد الإلكتروني للإدارة:",
+        adminStatVol: "حجم التداولات عبر الوسيط",
+        adminStatComm: "أرباح عمولة المنصة (8%)",
+        adminStatPending: "طلبات المنشورات المعلقة",
+        adminReqsTitle: "إدارة طلبات اعتماد الإعلانات (post_requests)",
+        otpTitle: "التحقق من البريد الإلكتروني",
+        otpDesc: "تم إرسال رمز OTP لتأكيد الحساب.",
+        otpCodeLabel: "رمز التفعيل الخاص بك:",
+        otpVerifyBtn: "تأكيد البريد والدخول للمنصة",
+        createPostTitle: "تقديم إعلان قطعة غيار جديد",
+        postTitleLabel: "عنوان القطعة *",
+        postPriceLabel: "السعر بالدينار الجزائري (DZD) *",
+        postDescLabel: "وصف تفصيلي للقطعة",
+        createPostSubmit: "إرسال الإعلان للأدمن",
+        addRatingTitle: "إضافة تقييم مستخدم",
+        ratingTargetLabel: "اسم المورد أو المشتري *",
+        ratingValueLabel: "التقييم (1-5 نجوم) *",
+        ratingReviewLabel: "المراجعة والتعليق",
+        ratingSubmit: "إرسال التقييم",
+        checkoutTitle: "تفاصيل الشراء بالدينار الجزائري (DZD)",
+        checkoutDesc: "حفظ المبلغ بالضمان المالي حتى استلام القطعة ومعاينتها",
+        checkoutConfirmBtn: "تأكيد وحجز المبلغ بالضمان",
+        buyWithEscrow: "شراء بالضمان",
+        dzdCurrency: "د.ج",
+        commentsTitle: "التعليقات والاستفسارات:",
+        writeCommentPlaceholder: "اكتب استفسارك...",
+        approvedStatus: "موافق عليه (Approved)",
+        noPosts: "لا توجد إعلانات معتمدة متوفرة حالياً.",
+        noRequests: "لا توجد طلبات معلقة.",
+        itemPrice: "سعر القطعة:",
+        protectionFee: "عمولة حماية الوسيط (8%):",
+        totalAmount: "المبلغ الإجمالي المحتجز بالضمان:",
+        seller: "المُعلن:",
+        priceDzd: "السعر بالدينار الجزائري",
+        adminRoleText: "👑 أدمن المنصة",
+        userRoleText: "👤 مستخدم نشط"
+    },
+    en: {
+        brandName: "Sayarati Broker",
+        brandTagline: "Certified Spare Parts Brokerage Platform (Algeria)",
+        authSubtitle: "Sign in or create an account to access the platform",
+        loginTab: "Sign In",
+        registerTab: "New Account",
+        emailLabel: "Email Address",
+        passwordLabel: "Password",
+        usernameLabel: "Username / Organization",
+        loginBtn: "Enter Platform",
+        registerBtn: "Create & Confirm Account",
+        registerNote: "Note: With a new account, you can browse listings, order spare parts, and publish items for sale.",
+        authFooter: "Certified commercial brokerage platform protecting financial transactions in Algeria (DZD)",
+        navCatalog: "Listings & Parts",
+        navMessages: "Messages",
+        navRatings: "Ratings",
+        navEscrow: "Escrow & Protection",
+        navAdmin: "Admin Dashboard",
+        bannerBadge: "Transactions in Algerian Dinar (DZD) with 100% Protection",
+        bannerTitle: "Commercial Brokerage Platform for Buying & Selling Auto Spare Parts in Algeria",
+        bannerDesc: "Connecting buyers and sellers with admin verification for posts and secure escrow funding until inspection.",
+        addPostBtn: "Add New Spare Part Listing",
+        searchPlaceholder: "Search by part title, notes...",
+        allBrands: "All Brands",
+        currentUser: "Current User:",
+        chatTitle: "Direct Messages",
+        chatDesc: "Direct communication between buyers, sellers, and administration",
+        chatInputPlaceholder: "Type your message here...",
+        sendBtn: "Send",
+        ratingsTitle: "Ratings & Reviews",
+        ratingsDesc: "Rate experience between buyers and sellers to maintain trust.",
+        addRatingBtn: "Add New Rating",
+        escrowTitle: "How does the DZD Escrow & Protection System work?",
+        escrowDesc: "We ensure funds are held safely and not released until the buyer receives and inspects the item.",
+        escrowStep1Title: "1. Post & Approval",
+        escrowStep1Desc: "Seller posts the item with price in DZD; admin reviews and approves it.",
+        escrowStep2Title: "2. Deposit Funds",
+        escrowStep2Desc: "Buyer pays the price + brokerage fee to Sayarati Broker platform escrow account.",
+        escrowStep3Title: "3. Inspection & Shipping",
+        escrowStep3Desc: "Buyer receives the part and inspects it for quality and matching details.",
+        escrowStep4Title: "4. DZD Release",
+        escrowStep4Desc: "Platform releases net funds to seller in DZD and retains brokerage fee.",
+        adminTitle: "Admin Dashboard",
+        adminEmail: "Admin Email:",
+        adminStatVol: "Total Brokerage Volume",
+        adminStatComm: "Platform Earnings (8%)",
+        adminStatPending: "Pending Post Requests",
+        adminReqsTitle: "Manage Post Approval Requests (post_requests)",
+        otpTitle: "Email Verification",
+        otpDesc: "An OTP verification code has been sent to your email.",
+        otpCodeLabel: "Your Verification Code:",
+        otpVerifyBtn: "Verify Email & Enter",
+        createPostTitle: "Submit New Spare Part Listing",
+        postTitleLabel: "Part Title *",
+        postPriceLabel: "Price in DZD *",
+        postDescLabel: "Detailed Description",
+        createPostSubmit: "Send Listing to Admin",
+        addRatingTitle: "Add User Rating",
+        ratingTargetLabel: "Vendor or Buyer Name *",
+        ratingValueLabel: "Rating (1-5 Stars) *",
+        ratingReviewLabel: "Review & Comments",
+        ratingSubmit: "Submit Rating",
+        checkoutTitle: "Purchase Details in DZD",
+        checkoutDesc: "Funds held securely in escrow until item delivery and inspection",
+        checkoutConfirmBtn: "Confirm & Reserve Escrow Amount",
+        buyWithEscrow: "Buy with Escrow",
+        dzdCurrency: "DZD",
+        commentsTitle: "Comments & Inquiries:",
+        writeCommentPlaceholder: "Write your inquiry...",
+        approvedStatus: "Approved",
+        noPosts: "No approved listings available at the moment.",
+        noRequests: "No pending requests.",
+        itemPrice: "Part Price:",
+        protectionFee: "Broker Protection Fee (8%):",
+        totalAmount: "Total Amount Held in Escrow:",
+        seller: "Seller:",
+        priceDzd: "Price in Algerian Dinar",
+        adminRoleText: "👑 Platform Admin",
+        userRoleText: "👤 Active User"
+    }
+};
+
+let currentLang = localStorage.getItem('sayarati_lang') || 'ar';
+let currentTheme = localStorage.getItem('sayarati_theme') || 'dark';
+
 const db = {
     users: [
         { id: 1, username: 'أدمن المنصة', email: 'ounnashaithem3@gmail.com', password: '123321', role: 'admin' },
@@ -62,10 +228,67 @@ const db = {
 };
 
 window.addEventListener('DOMContentLoaded', () => {
+    applyTheme(currentTheme);
+    applyLanguage(currentLang);
     lucide.createIcons();
     loadSavedUsers();
     checkSavedSession();
 });
+
+function toggleTheme() {
+    currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+    localStorage.setItem('sayarati_theme', currentTheme);
+    applyTheme(currentTheme);
+}
+
+function applyTheme(theme) {
+    const htmlEl = document.documentElement;
+    const themeIcon = document.getElementById('theme-icon');
+    if (theme === 'dark') {
+        htmlEl.classList.add('dark');
+        if (themeIcon) themeIcon.setAttribute('data-lucide', 'sun');
+    } else {
+        htmlEl.classList.remove('dark');
+        if (themeIcon) themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    lucide.createIcons();
+}
+
+function switchLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('sayarati_lang', lang);
+    applyLanguage(lang);
+    renderAuthHeader();
+    renderProducts();
+    renderMessages();
+    renderRatings();
+    renderAdminRequests();
+}
+
+function applyLanguage(lang) {
+    const htmlEl = document.documentElement;
+    htmlEl.setAttribute('lang', lang);
+    htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            el.innerText = translations[lang][key];
+        }
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+            el.setAttribute('placeholder', translations[lang][key]);
+        }
+    });
+
+    const langToggleBtn = document.getElementById('lang-toggle-btn');
+    if (langToggleBtn) {
+        langToggleBtn.innerText = lang === 'ar' ? 'EN' : 'عربي';
+    }
+}
 
 function loadSavedUsers() {
     const stored = localStorage.getItem('sayarati_registered_users');
@@ -143,12 +366,12 @@ function handleLoginSubmit(e) {
     const user = db.users.find(u => u.email.toLowerCase() === email.toLowerCase());
 
     if (!user) {
-        showToast('الحساب غير موجود! يرجى إنشاء حساب جديد أولاً.', 'error');
+        showToast(currentLang === 'ar' ? 'الحساب غير موجود! يرجى إنشاء حساب جديد أولاً.' : 'Account not found! Please register first.', 'error');
         return;
     }
 
     if (user.password !== password) {
-        showToast('كلمة المرور غير صحيحة! حاول مرة أخرى.', 'error');
+        showToast(currentLang === 'ar' ? 'كلمة المرور غير صحيحة! حاول مرة أخرى.' : 'Incorrect password! Please try again.', 'error');
         return;
     }
 
@@ -165,13 +388,13 @@ function handleRegisterSubmit(e) {
     const password = document.getElementById('reg-password').value;
 
     if (email.toLowerCase() === 'ounnashaithem3@gmail.com') {
-        showToast('هذا البريد مخصص للأدمن فقط!', 'error');
+        showToast(currentLang === 'ar' ? 'هذا البريد مخصص للأدمن فقط!' : 'This email is reserved for Admin only!', 'error');
         return;
     }
 
     const existingUser = db.users.find(u => u.email.toLowerCase() === email.toLowerCase());
     if (existingUser) {
-        showToast('هذا البريد الإلكتروني مسجل بالفعل!', 'error');
+        showToast(currentLang === 'ar' ? 'هذا البريد الإلكتروني مسجل بالفعل!' : 'This email is already registered!', 'error');
         return;
     }
 
@@ -198,7 +421,7 @@ function handleRegisterSubmit(e) {
 function verifyOtpCode() {
     const inputOtp = document.getElementById('otp-input').value;
     if (!inputOtp || inputOtp.length < 4) {
-        showToast('الرجاء إدخال رمز OTP الصحيح (8492)', 'error');
+        showToast(currentLang === 'ar' ? 'الرجاء إدخال رمز OTP الصحيح (8492)' : 'Please enter valid OTP code (8492)', 'error');
         return;
     }
 
@@ -221,7 +444,7 @@ function verifyOtpCode() {
     renderRatings();
     renderAdminRequests();
     
-    showToast('تم تسجيل الدخول بنجاح!');
+    showToast(currentLang === 'ar' ? 'تم تسجيل الدخول بنجاح!' : 'Logged in successfully!');
     
     if (db.isAdmin) switchTab('admin-dash');
     else switchTab('catalog');
@@ -234,7 +457,7 @@ function logoutUser() {
     document.getElementById('auth-portal').classList.remove('hidden');
     document.getElementById('main-header').classList.add('hidden');
     document.getElementById('main-content').classList.add('hidden');
-    showToast('تم تسجيل الخروج بنجاح');
+    showToast(currentLang === 'ar' ? 'تم تسجيل الخروج بنجاح' : 'Logged out successfully');
 }
 
 function switchTab(tabId) {
@@ -261,10 +484,12 @@ function switchTab(tabId) {
 
 function renderAuthHeader() {
     const container = document.getElementById('auth-container');
+    const t = translations[currentLang];
+    const roleText = db.isAdmin ? t.adminRoleText : t.userRoleText;
     container.innerHTML = `
         <div class="flex items-center gap-2 bg-slate-800 py-1.5 px-3 rounded-xl border border-slate-700 text-xs">
             <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span class="text-slate-200 font-bold">${db.isAdmin ? '👑 أدمن المنصة' : '👤 مستخدم نشط'}</span>
+            <span class="text-slate-200 font-bold">${roleText}</span>
             <span class="text-slate-400 hidden sm:inline">(${db.currentUserEmail})</span>
         </div>
     `;
@@ -273,9 +498,10 @@ function renderAuthHeader() {
 function renderProducts() {
     const grid = document.getElementById('product-grid');
     const approvedPosts = db.posts.filter(p => p.status === 'approved');
+    const t = translations[currentLang];
 
     if (approvedPosts.length === 0) {
-        grid.innerHTML = `<p class="col-span-full text-center py-10 text-slate-500 text-xs">لا توجد إعلانات معتمدة متوفرة حالياً.</p>`;
+        grid.innerHTML = `<p class="col-span-full text-center py-10 text-slate-500 text-xs">${t.noPosts}</p>`;
         return;
     }
 
@@ -287,13 +513,13 @@ function renderProducts() {
                     <div class="h-44 w-full relative bg-slate-950 overflow-hidden">
                         <img src="${p.img}" alt="${p.title}" class="w-full h-full object-cover">
                         <span class="absolute top-2 right-2 bg-emerald-500/90 text-slate-950 text-[10px] font-bold px-2 py-1 rounded-lg">
-                            موافق عليه (Approved)
+                            ${t.approvedStatus}
                         </span>
                     </div>
                     <div class="p-4 space-y-2">
                         <div class="flex justify-between items-center text-[11px] text-slate-400">
                             <span class="font-bold text-brand-400">${p.brand}</span>
-                            <span>المُعلن: ${p.vendeur_name}</span>
+                            <span>${t.seller} ${p.vendeur_name}</span>
                         </div>
                         <h3 class="text-sm font-bold text-white line-clamp-1">${p.title}</h3>
                         <p class="text-xs text-slate-400 line-clamp-2">${p.description}</p>
@@ -302,7 +528,7 @@ function renderProducts() {
 
                 <div class="p-4 pt-0 space-y-3">
                     <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800 space-y-2 text-[11px]">
-                        <span class="text-slate-400 font-bold block border-b border-slate-800 pb-1">التعليقات والاستفسارات:</span>
+                        <span class="text-slate-400 font-bold block border-b border-slate-800 pb-1">${t.commentsTitle}</span>
                         <div class="space-y-1.5 max-h-24 overflow-y-auto">
                             ${postComments.map(c => `
                                 <div class="bg-slate-900/80 p-1.5 rounded border border-slate-800/80">
@@ -312,18 +538,18 @@ function renderProducts() {
                             `).join('')}
                         </div>
                         <form onsubmit="handleAddComment(event, ${p.id})" class="flex gap-1 pt-1">
-                            <input type="text" placeholder="اكتب استفسارك..." required class="flex-1 bg-slate-900 border border-slate-800 text-slate-200 text-[10px] rounded-lg px-2 py-1 outline-none">
-                            <button type="submit" class="bg-brand-600 hover:bg-brand-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-lg">إرسال</button>
+                            <input type="text" placeholder="${t.writeCommentPlaceholder}" required class="flex-1 bg-slate-900 border border-slate-800 text-slate-200 text-[10px] rounded-lg px-2 py-1 outline-none">
+                            <button type="submit" class="bg-brand-600 hover:bg-brand-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-lg">${t.sendBtn}</button>
                         </form>
                     </div>
 
                     <div class="flex items-end justify-between pt-1 border-t border-slate-800">
                         <div>
-                            <span class="text-[10px] text-slate-400 block">السعر بالدينار الجزائري</span>
-                            <span class="text-lg font-black text-amber-400 font-mono">${p.price.toLocaleString()} <span class="text-xs font-normal">د.ج</span></span>
+                            <span class="text-[10px] text-slate-400 block">${t.priceDzd}</span>
+                            <span class="text-lg font-black text-amber-400 font-mono">${p.price.toLocaleString()} <span class="text-xs font-normal">${t.dzdCurrency}</span></span>
                         </div>
                         <button onclick="openCheckoutModal(${p.id})" class="bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs px-3 py-2 rounded-xl transition flex items-center gap-1">
-                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-300"></i> شراء بالضمان
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-300"></i> ${t.buyWithEscrow}
                         </button>
                     </div>
                 </div>
@@ -349,7 +575,7 @@ function handleAddComment(e, postId) {
 
     input.value = '';
     renderProducts();
-    showToast('تمت إضافة تعليقك بنجاح');
+    showToast(currentLang === 'ar' ? 'تمت إضافة تعليقك بنجاح' : 'Comment added successfully');
 }
 
 function renderMessages() {
@@ -377,12 +603,12 @@ function handleSendMessage(e) {
         id: db.messages.length + 1,
         sender_name: db.currentUserEmail.split('@')[0],
         message_content: val,
-        sent_at: new Date().toLocaleTimeString('ar-DZ', { hour: '2-digit', minute: '2-digit' })
+        sent_at: new Date().toLocaleTimeString(currentLang === 'ar' ? 'ar-DZ' : 'en-US', { hour: '2-digit', minute: '2-digit' })
     });
 
     input.value = '';
     renderMessages();
-    showToast('تم إرسال الرسالة');
+    showToast(currentLang === 'ar' ? 'تم إرسال الرسالة' : 'Message sent successfully');
 }
 
 function renderRatings() {
@@ -420,7 +646,7 @@ function handleAddRatingSubmit(e) {
 
     closeModal('modal-add-rating');
     renderRatings();
-    showToast('تم تسجيل التقييم بنجاح!');
+    showToast(currentLang === 'ar' ? 'تم تسجيل التقييم بنجاح!' : 'Rating submitted successfully!');
 }
 
 function openCreatePostModal() {
@@ -442,7 +668,7 @@ function handleCreatePostSubmit(e) {
         price,
         status: 'pending',
         created_at: new Date().toISOString().split('T')[0],
-        brand: 'قطع عامة',
+        brand: currentLang === 'ar' ? 'قطع عامة' : 'General Parts',
         img: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=400&q=80'
     };
 
@@ -456,23 +682,24 @@ function handleCreatePostSubmit(e) {
 
     closeModal('modal-create-post');
     renderAdminRequests();
-    showToast('تم إرسال إعلانك بنجاح! هو قيد المراجعة والاعتماد من الأدمن.');
+    showToast(currentLang === 'ar' ? 'تم إرسال إعلانك بنجاح! هو قيد المراجعة والاعتماد من الأدمن.' : 'Listing submitted! Pending admin review.');
 }
 
 function renderAdminRequests() {
     if (!db.isAdmin) return;
     const container = document.getElementById('admin-requests-list');
     const pendingReqs = db.post_requests.filter(r => r.status === 'pending');
+    const t = translations[currentLang];
 
     let totalVol = 0;
     db.orders.forEach(o => totalVol += o.totalPaid);
 
-    document.getElementById('admin-stat-volume').innerText = totalVol.toLocaleString() + ' د.ج';
-    document.getElementById('admin-stat-commission').innerText = (totalVol * 0.08).toLocaleString() + ' د.ج';
+    document.getElementById('admin-stat-volume').innerText = totalVol.toLocaleString() + ' ' + t.dzdCurrency;
+    document.getElementById('admin-stat-commission').innerText = (totalVol * 0.08).toLocaleString() + ' ' + t.dzdCurrency;
     document.getElementById('admin-stat-pending').innerText = pendingReqs.length;
 
     if (db.post_requests.length === 0) {
-        container.innerHTML = `<p class="text-xs text-slate-500 py-4 text-center">لا توجد طلبات معلقة.</p>`;
+        container.innerHTML = `<p class="text-xs text-slate-500 py-4 text-center">${t.noRequests}</p>`;
         return;
     }
 
@@ -483,7 +710,7 @@ function renderAdminRequests() {
             <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 text-xs">
                 <div>
                     <span class="font-bold text-white text-sm block">${post.title}</span>
-                    <span class="text-slate-400">المُعلن: ${post.vendeur_name} | السعر: <span class="font-mono text-amber-400 font-bold">${post.price.toLocaleString()} د.ج</span></span>
+                    <span class="text-slate-400">${t.seller} ${post.vendeur_name} | Price: <span class="font-mono text-amber-400 font-bold">${post.price.toLocaleString()} ${t.dzdCurrency}</span></span>
                     <p class="text-slate-500 text-[11px] mt-1">${post.description}</p>
                 </div>
                 <div class="flex items-center gap-2 w-full md:w-auto">
@@ -491,7 +718,7 @@ function renderAdminRequests() {
                         <button onclick="approvePostRequest(${r.id}, ${post.id})" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs px-3 py-1.5 rounded-lg transition">موافق (Approve)</button>
                         <button onclick="rejectPostRequest(${r.id}, ${post.id})" class="bg-red-600 hover:bg-red-500 text-white font-bold text-xs px-3 py-1.5 rounded-lg transition">رفض (Reject)</button>
                     ` : `
-                        <span class="font-bold text-xs ${r.status === 'accepted' ? 'text-emerald-400' : 'text-red-400'}">تمت المعالجة: ${r.status}</span>
+                        <span class="font-bold text-xs ${r.status === 'accepted' ? 'text-emerald-400' : 'text-red-400'}">Status: ${r.status}</span>
                     `}
                 </div>
             </div>
@@ -506,7 +733,7 @@ function approvePostRequest(requestId, postId) {
     if (req && post) {
         req.status = 'accepted';
         post.status = 'approved';
-        showToast('تمت الموافقة على الإعلان ونشره بالكتالوج العام!');
+        showToast(currentLang === 'ar' ? 'تمت الموافقة على الإعلان ونشره بالكتالوج العام!' : 'Listing approved and published!');
         renderProducts();
         renderAdminRequests();
     }
@@ -519,7 +746,7 @@ function rejectPostRequest(requestId, postId) {
     if (req && post) {
         req.status = 'rejected';
         post.status = 'rejected';
-        showToast('تم رفض طلب الإعلان.', 'error');
+        showToast(currentLang === 'ar' ? 'تم رفض طلب الإعلان.' : 'Listing request rejected.', 'error');
         renderProducts();
         renderAdminRequests();
     }
@@ -528,6 +755,7 @@ function rejectPostRequest(requestId, postId) {
 function openCheckoutModal(postId) {
     const post = db.posts.find(p => p.id === postId);
     db.selectedPostForCheckout = post;
+    const t = translations[currentLang];
 
     const commission = post.price * 0.08;
     const total = post.price + commission;
@@ -535,20 +763,20 @@ function openCheckoutModal(postId) {
     document.getElementById('checkout-details-body').innerHTML = `
         <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
             <span class="text-white font-bold block">${post.title}</span>
-            <span class="text-slate-400 block">المُعلن: ${post.vendeur_name}</span>
+            <span class="text-slate-400 block">${t.seller} ${post.vendeur_name}</span>
         </div>
         <div class="space-y-1.5 pt-2 border-t border-slate-800">
             <div class="flex justify-between text-slate-300">
-                <span>سعر القطعة:</span>
-                <span class="font-mono">${post.price.toLocaleString()} د.ج</span>
+                <span>${t.itemPrice}</span>
+                <span class="font-mono">${post.price.toLocaleString()} ${t.dzdCurrency}</span>
             </div>
             <div class="flex justify-between text-amber-400">
-                <span>عمولة حماية الوسيط (8%):</span>
-                <span class="font-mono">+${commission.toLocaleString()} د.ج</span>
+                <span>${t.protectionFee}</span>
+                <span class="font-mono">+${commission.toLocaleString()} ${t.dzdCurrency}</span>
             </div>
             <div class="flex justify-between text-white font-bold text-sm pt-2 border-t border-slate-800">
-                <span>المبلغ الإجمالي المحتجز بالضمان:</span>
-                <span class="font-mono text-emerald-400">${total.toLocaleString()} د.ج</span>
+                <span>${t.totalAmount}</span>
+                <span class="font-mono text-emerald-400">${total.toLocaleString()} ${t.dzdCurrency}</span>
             </div>
         </div>
     `;
@@ -572,7 +800,7 @@ function confirmOrderPayment() {
     });
 
     closeModal('modal-checkout');
-    showToast('تم الدفع واحتجاز المبلغ بالدينار الجزائري في الضمان المالي!');
+    showToast(currentLang === 'ar' ? 'تم الدفع واحتجاز المبلغ بالدينار الجزائري في الضمان المالي!' : 'Payment confirmed and funds held in escrow!');
 }
 
 function closeModal(id) {
