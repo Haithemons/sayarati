@@ -20,22 +20,17 @@ const translations = {
         authSubtitle: "منصة وسيط قطع الغيار بالجزائر",
         loginTab: "تسجيل الدخول",
         registerTab: "حساب جديد",
-        emailLabel: "البريد الإلكتروني",
-        passwordLabel: "كلمة المرور",
-        usernameLabel: "اسم المستخدم / المؤسسة",
         loginBtn: "Login",
         registerBtn: "إنشاء الحساب وتأكيده",
-        registerNote: "ملاحظة: بحسابك الجديد يمكنك تصفح الإعلانات وطلب قطع الغيار بسهولة.",
-        authFooter: "منصة الوسيط التجاري المعتمد لحماية التعاملات المالية بالجزائر د.ج",
         navCatalog: "الإعلانات والقطع",
-        navMessages: "الرسائل",
-        navRatings: "التقييمات",
+        navMessages: "الرسائل والمحادثات",
+        navRatings: "التقييمات والسمعة",
         navEscrow: "الضمان والوساطة",
         navAdmin: "لوحة الأدمن",
         bannerBadge: "المعاملات بالدينار الجزائري (د.ج / DZD) مع حماية 100%",
-        bannerTitle: "منصة الوسيط التجاري لبيع وشراء قطع غيار السيارات في الجزائر",
-        bannerDesc: "نربط البائعين والمشترين مع ضمان اعتماد الإدارة للمنشورات وتأمين المبالغ حتى المعاينة.",
-        addPostBtn: "إضافة إعلان قطعة جديد للبيع",
+        bannerTitle: "منصة الوسيط التجاري لبيع وشراء قطع غيار السيارات بالجزائر",
+        bannerDesc: "نضمن حفظ أموال المشتري حتى الفحص والمعاينة مع توثيق البائعين والمنشورات.",
+        addPostBtn: "إضافة إعلان قطعة جديد",
         searchPlaceholder: "ابحث باسم القطعة، الملاحظات...",
         allBrands: "جميع الماركات",
         allWilayas: "جميع الولايات (58)",
@@ -50,14 +45,6 @@ const translations = {
         addRatingBtn: "إضافة تقييم جديد",
         escrowTitle: "كيف يعمل نظام الضمان والوساطة المالي بالدينار الجزائري؟",
         escrowDesc: "نضمن عدم تحويل الأموال للمورد حتى يستلم المشتري القطعة وتكون متطابقة.",
-        escrowStep1Title: "1. النشر والموافقة",
-        escrowStep1Desc: "ينشر البائع القطعة بسعر د.ج، وتراجعها الإدارة لتغيير الحالة إلى Approved.",
-        escrowStep2Title: "2. إيداع المبلغ",
-        escrowStep2Desc: "يدفع المشتري القيمة + عمولة الوساطة إلى حساب منصة \"سيارتي بروكر\".",
-        escrowStep3Title: "3. المعاينة والشحن",
-        escrowStep3Desc: "يستلم المشتري القطعة ويعاينها للتأكد من سلامتها ومطابقتها.",
-        escrowStep4Title: "4. الإفراج عن DZD",
-        escrowStep4Desc: "تحول المنصة مستحقات البائع بالدينار الجزائري وتقتطع نسبة الوساطة.",
         adminTitle: "لوحة تحكم الأدمن (Admin Dashboard)",
         adminEmail: "البريد الإلكتروني للإدارة:",
         adminStatVol: "حجم التداولات عبر الوسيط",
@@ -85,7 +72,7 @@ const translations = {
         dzdCurrency: "د.ج",
         commentsTitle: "التعليقات والاستفسارات:",
         writeCommentPlaceholder: "اكتب استفسارك...",
-        approvedStatus: "موافق عليه (Approved)",
+        approvedStatus: "موافق عليه",
         noPosts: "لا توجد إعلانات معتمدة متوافقة مع شروط البحث.",
         noRequests: "لا توجد طلبات معلقة.",
         itemPrice: "سعر القطعة:",
@@ -94,7 +81,13 @@ const translations = {
         seller: "المُعلن:",
         priceDzd: "السعر بالدينار الجزائري",
         adminRoleText: "👑 أدمن المنصة",
-        userRoleText: "👤 مستخدم نشط"
+        userRoleText: "👤 مستخدم نشط",
+        conditionLabel: "حالة القطعة:",
+        conditionNew: "جديدة (غير مستعملة)",
+        shippingAvailable: "التوصيل متوفر لكافة الولايات",
+        sharePost: "مشاركة الإعلان",
+        copiedToClipboard: "تم نسخ رابط الإعلان بنجاح!",
+        viewDetails: "عرض التفاصيل الكاملة"
     },
     en: {
         brandName: "Sayarati Broker",
@@ -102,13 +95,8 @@ const translations = {
         authSubtitle: "Spare Parts Brokerage Platform",
         loginTab: "Login",
         registerTab: "Register",
-        emailLabel: "Username or Email",
-        passwordLabel: "Password",
-        usernameLabel: "Username / Organization",
         loginBtn: "Login",
         registerBtn: "Create & Confirm Account",
-        registerNote: "Note: Browse listings and order auto parts easily with a new account.",
-        authFooter: "Certified commercial brokerage platform protecting financial transactions in Algeria (DZD)",
         navCatalog: "Listings & Parts",
         navMessages: "Messages",
         navRatings: "Ratings",
@@ -116,7 +104,7 @@ const translations = {
         navAdmin: "Admin Dashboard",
         bannerBadge: "Transactions in Algerian Dinar (DZD) with 100% Protection",
         bannerTitle: "Commercial Brokerage Platform for Buying & Selling Auto Spare Parts in Algeria",
-        bannerDesc: "Connecting buyers and sellers with admin verification for posts and secure escrow funding until inspection.",
+        bannerDesc: "Connecting buyers and sellers with admin verification and secure escrow funding.",
         addPostBtn: "Add New Spare Part Listing",
         searchPlaceholder: "Search by part title, notes...",
         allBrands: "All Brands",
@@ -131,15 +119,7 @@ const translations = {
         ratingsDesc: "Rate experience between buyers and sellers to maintain trust.",
         addRatingBtn: "Add New Rating",
         escrowTitle: "How does the DZD Escrow & Protection System work?",
-        escrowDesc: "We ensure funds are held safely and not released until the buyer receives and inspects the item.",
-        escrowStep1Title: "1. Post & Approval",
-        escrowStep1Desc: "Seller posts the item with price in DZD; admin reviews and approves it.",
-        escrowStep2Title: "2. Deposit Funds",
-        escrowStep2Desc: "Buyer pays the price + brokerage fee to Sayarati Broker platform escrow account.",
-        escrowStep3Title: "3. Inspection & Shipping",
-        escrowStep3Desc: "Buyer receives the part and inspects it for quality and matching details.",
-        escrowStep4Title: "4. DZD Release",
-        escrowStep4Desc: "Platform releases net funds to seller in DZD and retains brokerage fee.",
+        escrowDesc: "We ensure funds are held safely and not released until item delivery.",
         adminTitle: "Admin Dashboard",
         adminEmail: "Admin Email:",
         adminStatVol: "Total Brokerage Volume",
@@ -176,7 +156,13 @@ const translations = {
         seller: "Seller:",
         priceDzd: "Price in Algerian Dinar",
         adminRoleText: "👑 Platform Admin",
-        userRoleText: "👤 Active User"
+        userRoleText: "👤 Active User",
+        conditionLabel: "Condition:",
+        conditionNew: "Brand New",
+        shippingAvailable: "Shipping available to all wilayas",
+        sharePost: "Share Listing",
+        copiedToClipboard: "Listing link copied to clipboard!",
+        viewDetails: "View Full Details"
     }
 };
 
@@ -241,7 +227,8 @@ const db = {
         { id: 1, evaluator_name: 'يوسف (مشتري)', evaluated_name: 'مورّد قطع الجزائر', rating: 5, review: 'تعامل ممتاز وسريع وسلعة أصلية كما بالوصف تماماً.', created_at: '2026-10-28' }
     ],
     messages: [
-        { id: 1, sender_name: 'يوسف (مشتري)', message_content: 'السلام عليكم، هل كمبروسر بيجو متوفر حالياً؟', sent_at: '10:30' }
+        { id: 1, sender_name: 'مورّد قطع الجزائر', message_content: 'مرحباً بك في منصة سيارتي بروكر! كيف يمكننا مساعدتك اليوم؟', sent_at: '10:15' },
+        { id: 2, sender_name: 'يوسف (مشتري)', message_content: 'السلام عليكم، هل كمبروسر بيجو متوفر حالياً؟ وهل يوجد ضمان؟', sent_at: '10:30' }
     ],
     orders: [
         { id: 'ORD-501', title: 'طقم فحمات فرامل أمامي رينو سمبول', price: 4500, totalPaid: 4860, buyerEmail: 'buyer@client.dz', vendorName: 'مورّد قطع الجزائر', date: '2026-10-30' }
@@ -359,7 +346,10 @@ function checkSavedSession() {
         db.isLoggedIn = true;
 
         if (authPortal) authPortal.classList.add('hidden');
-        if (mainHeader) mainHeader.classList.remove('hidden');
+        if (mainHeader) {
+            mainHeader.classList.remove('hidden');
+            mainHeader.classList.add('flex');
+        }
         if (mainContent) mainContent.classList.remove('hidden');
 
         if (db.isAdmin) {
@@ -386,15 +376,28 @@ function toggleAuthMode(mode) {
     const formLogin = document.getElementById('form-login');
     const formRegister = document.getElementById('form-register');
     const badgeTitle = document.getElementById('portal-title-badge');
+    
+    const tabLoginBtn = document.getElementById('tab-login-btn');
+    const tabRegisterBtn = document.getElementById('tab-register-btn');
 
     if (mode === 'login') {
         formLogin.classList.remove('hidden');
         formRegister.classList.add('hidden');
         if (badgeTitle) badgeTitle.innerText = "Login";
+
+        if (tabLoginBtn && tabRegisterBtn) {
+            tabLoginBtn.className = "px-2.5 py-0.5 font-bold rounded-lg transition bg-amber-500 text-slate-950 shadow";
+            tabRegisterBtn.className = "px-2.5 py-0.5 font-semibold rounded-lg transition text-slate-300 hover:text-white bg-transparent";
+        }
     } else {
         formLogin.classList.add('hidden');
         formRegister.classList.remove('hidden');
         if (badgeTitle) badgeTitle.innerText = "Register";
+
+        if (tabLoginBtn && tabRegisterBtn) {
+            tabLoginBtn.className = "px-2.5 py-0.5 font-semibold rounded-lg transition text-slate-300 hover:text-white bg-transparent";
+            tabRegisterBtn.className = "px-2.5 py-0.5 font-bold rounded-lg transition bg-amber-500 text-slate-950 shadow";
+        }
     }
 }
 
@@ -470,12 +473,20 @@ function verifyOtpCode() {
 
     closeModal('modal-otp');
     document.getElementById('auth-portal').classList.add('hidden');
-    document.getElementById('main-header').classList.remove('hidden');
+    
+    const mainHeader = document.getElementById('main-header');
+    if (mainHeader) {
+        mainHeader.classList.remove('hidden');
+        mainHeader.classList.add('flex');
+    }
     document.getElementById('main-content').classList.remove('hidden');
 
     if (db.isAdmin) {
-        document.getElementById('nav-admin').classList.remove('hidden');
-        document.getElementById('nav-admin').classList.add('flex');
+        const navAdmin = document.getElementById('nav-admin');
+        if (navAdmin) {
+            navAdmin.classList.remove('hidden');
+            navAdmin.classList.add('flex');
+        }
     }
 
     renderAuthHeader();
@@ -495,7 +506,8 @@ function logoutUser() {
     db.isLoggedIn = false;
     db.isAdmin = false;
     document.getElementById('auth-portal').classList.remove('hidden');
-    document.getElementById('main-header').classList.add('hidden');
+    const mainHeader = document.getElementById('main-header');
+    if (mainHeader) mainHeader.classList.add('hidden');
     document.getElementById('main-content').classList.add('hidden');
     showToast(currentLang === 'ar' ? 'تم تسجيل الخروج بنجاح' : 'Logged out successfully');
 }
@@ -512,8 +524,13 @@ function switchTab(tabId) {
     ['catalog', 'messages', 'ratings', 'escrow', 'admin'].forEach(id => {
         const btn = document.getElementById(`nav-${id}`);
         if (btn) {
-            if (id === tabId) btn.classList.add('text-brand-400', 'font-bold');
-            else btn.classList.remove('text-brand-400', 'font-bold');
+            if (id === tabId) {
+                btn.classList.add('bg-amber-500/10', 'text-amber-400', 'border', 'border-amber-500/20', 'font-bold');
+                btn.classList.remove('text-slate-300');
+            } else {
+                btn.classList.remove('bg-amber-500/10', 'text-amber-400', 'border', 'border-amber-500/20', 'font-bold');
+                btn.classList.add('text-slate-300');
+            }
         }
     });
 
@@ -524,13 +541,16 @@ function switchTab(tabId) {
 
 function renderAuthHeader() {
     const container = document.getElementById('auth-container');
+    if (!container) return;
     const t = translations[currentLang];
     const roleText = db.isAdmin ? t.adminRoleText : t.userRoleText;
     container.innerHTML = `
-        <div class="flex items-center gap-2 bg-slate-800 py-1.5 px-3 rounded-xl border border-slate-700 text-xs">
-            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span class="text-slate-200 font-bold">${roleText}</span>
-            <span class="text-slate-400 hidden sm:inline">(${db.currentUserEmail})</span>
+        <div class="flex items-center gap-2 bg-slate-950 py-2 px-3 rounded-xl border border-slate-800 text-xs">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <div class="truncate">
+                <span class="text-white font-bold block truncate">${roleText}</span>
+                <span class="text-slate-400 text-[10px] block truncate">${db.currentUserEmail}</span>
+            </div>
         </div>
     `;
 }
@@ -541,6 +561,7 @@ function applyFilters() {
 
 function renderProducts() {
     const grid = document.getElementById('product-grid');
+    if (!grid) return;
     const keyword = document.getElementById('filter-keyword')?.value.toLowerCase().trim() || '';
     const selectedBrand = document.getElementById('filter-brand')?.value || '';
     const selectedWilaya = document.getElementById('filter-wilaya')?.value || '';
@@ -566,7 +587,7 @@ function renderProducts() {
     grid.innerHTML = filteredPosts.map(p => {
         const postComments = db.comments.filter(c => c.post_id === p.id);
         return `
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition shadow-lg flex flex-col justify-between">
+            <div class="bg-slate-900 border border-slate-800/80 rounded-2xl overflow-hidden hover:border-amber-500/30 transition shadow-xl flex flex-col justify-between">
                 <div>
                     <div class="h-44 w-full relative bg-slate-950 overflow-hidden">
                         <img src="${p.img}" alt="${p.title}" class="w-full h-full object-cover">
@@ -580,7 +601,7 @@ function renderProducts() {
                     </div>
                     <div class="p-4 space-y-2">
                         <div class="flex justify-between items-center text-[11px] text-slate-400">
-                            <span class="font-bold text-brand-400">${p.brand}</span>
+                            <span class="font-bold text-amber-400">${p.brand}</span>
                             <span>${t.seller} ${p.vendeur_name}</span>
                         </div>
                         <h3 class="text-sm font-bold text-white line-clamp-1">${p.title}</h3>
@@ -589,30 +610,38 @@ function renderProducts() {
                 </div>
 
                 <div class="p-4 pt-0 space-y-3">
-                    <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800 space-y-2 text-[11px]">
+                    <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800/80 space-y-2 text-[11px]">
                         <span class="text-slate-400 font-bold block border-b border-slate-800 pb-1">${t.commentsTitle}</span>
                         <div class="space-y-1.5 max-h-24 overflow-y-auto">
                             ${postComments.map(c => `
                                 <div class="bg-slate-900/80 p-1.5 rounded border border-slate-800/80">
-                                    <span class="text-brand-400 font-bold">${c.username}:</span>
+                                    <span class="text-amber-400 font-bold">${c.username}:</span>
                                     <span class="text-slate-300">${c.content}</span>
                                 </div>
                             `).join('')}
                         </div>
                         <form onsubmit="handleAddComment(event, ${p.id})" class="flex gap-1 pt-1">
                             <input type="text" placeholder="${t.writeCommentPlaceholder}" required class="flex-1 bg-slate-900 border border-slate-800 text-slate-200 text-[10px] rounded-lg px-2 py-1 outline-none">
-                            <button type="submit" class="bg-brand-600 hover:bg-brand-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-lg">${t.sendBtn}</button>
+                            <button type="submit" class="bg-amber-500 hover:bg-amber-600 text-slate-950 text-[10px] font-bold px-2.5 py-1 rounded-lg">${t.sendBtn}</button>
                         </form>
                     </div>
 
                     <div class="flex items-end justify-between pt-1 border-t border-slate-800">
                         <div>
                             <span class="text-[10px] text-slate-400 block">${t.priceDzd}</span>
-                            <span class="text-lg font-black text-amber-400 font-mono">${p.price.toLocaleString()} <span class="text-xs font-normal">${t.dzdCurrency}</span></span>
+                            <span class="text-base font-black text-amber-400 font-mono">${p.price.toLocaleString()} <span class="text-xs font-normal">${t.dzdCurrency}</span></span>
                         </div>
-                        <button onclick="openCheckoutModal(${p.id})" class="bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs px-3 py-2 rounded-xl transition flex items-center gap-1">
-                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-300"></i> ${t.buyWithEscrow}
-                        </button>
+                        <div class="flex items-center gap-1.5">
+                            <button onclick="openProductDetailModal(${p.id})" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold p-2 rounded-xl transition border border-slate-700" title="${t.viewDetails}">
+                                <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                            </button>
+                            <button onclick="shareProductLink(${p.id})" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold p-2 rounded-xl transition border border-slate-700" title="${t.sharePost}">
+                                <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
+                            </button>
+                            <button onclick="openCheckoutModal(${p.id})" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs px-3 py-2 rounded-xl transition flex items-center gap-1">
+                                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-slate-950"></i> ${t.buyWithEscrow}
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -641,18 +670,36 @@ function handleAddComment(e, postId) {
 }
 
 function renderMessages() {
-    document.getElementById('chat-current-user').innerText = db.currentUserEmail;
+    const chatUser = document.getElementById('chat-current-user');
+    if (chatUser) chatUser.innerText = db.currentUserEmail;
+    
     const container = document.getElementById('chat-messages-list');
+    if (!container) return;
 
-    container.innerHTML = db.messages.map(m => `
-        <div class="p-3 rounded-xl border border-slate-800 bg-slate-950 text-xs space-y-1">
-            <div class="flex justify-between items-center text-[10px] text-slate-500">
-                <span class="text-brand-400 font-bold">${m.sender_name}</span>
-                <span>${m.sent_at}</span>
+    const currentName = db.currentUserEmail ? db.currentUserEmail.split('@')[0] : '';
+
+    container.innerHTML = db.messages.map(m => {
+        const isMe = m.sender_name === currentName || m.sender_name === 'أنا' || m.sender_name.includes(currentName);
+        return `
+            <div class="flex flex-col ${isMe ? 'items-end' : 'items-start'} space-y-1 mb-2">
+                <div class="flex items-center gap-1.5 text-[10px] text-slate-500 px-1">
+                    <span class="font-bold text-amber-400">${m.sender_name}</span>
+                    <span>•</span>
+                    <span>${m.sent_at}</span>
+                </div>
+                <div class="max-w-[75%] p-3 rounded-2xl text-xs leading-relaxed shadow-md ${
+                    isMe 
+                        ? 'bg-amber-500 text-slate-950 rounded-br-none font-medium' 
+                        : 'bg-slate-950 border border-slate-800 text-slate-200 rounded-bl-none'
+                }">
+                    ${m.message_content}
+                </div>
             </div>
-            <p class="text-slate-200">${m.message_content}</p>
-        </div>
-    `).join('');
+        `;
+    }).join('');
+
+    container.scrollTop = container.scrollHeight;
+    lucide.createIcons();
 }
 
 function handleSendMessage(e) {
@@ -663,7 +710,7 @@ function handleSendMessage(e) {
 
     db.messages.push({
         id: db.messages.length + 1,
-        sender_name: db.currentUserEmail.split('@')[0],
+        sender_name: db.currentUserEmail.split('@')[0] || 'أنا',
         message_content: val,
         sent_at: new Date().toLocaleTimeString(currentLang === 'ar' ? 'ar-DZ' : 'en-US', { hour: '2-digit', minute: '2-digit' })
     });
@@ -675,6 +722,7 @@ function handleSendMessage(e) {
 
 function renderRatings() {
     const container = document.getElementById('ratings-list-container');
+    if (!container) return;
     container.innerHTML = db.ratings.map(r => `
         <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-2 text-xs">
             <div class="flex justify-between items-center">
@@ -752,15 +800,9 @@ function handleCreatePostSubmit(e) {
 function renderAdminRequests() {
     if (!db.isAdmin) return;
     const container = document.getElementById('admin-requests-list');
+    if (!container) return;
     const pendingReqs = db.post_requests.filter(r => r.status === 'pending');
     const t = translations[currentLang];
-
-    let totalVol = 0;
-    db.orders.forEach(o => totalVol += o.totalPaid);
-
-    document.getElementById('admin-stat-volume').innerText = totalVol.toLocaleString() + ' ' + t.dzdCurrency;
-    document.getElementById('admin-stat-commission').innerText = (totalVol * 0.08).toLocaleString() + ' ' + t.dzdCurrency;
-    document.getElementById('admin-stat-pending').innerText = pendingReqs.length;
 
     if (db.post_requests.length === 0) {
         container.innerHTML = `<p class="text-xs text-slate-500 py-4 text-center">${t.noRequests}</p>`;
@@ -824,26 +866,29 @@ function openCheckoutModal(postId) {
     const commission = post.price * 0.08;
     const total = post.price + commission;
 
-    document.getElementById('checkout-details-body').innerHTML = `
-        <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
-            <span class="text-white font-bold block">${post.title}</span>
-            <span class="text-slate-400 block">${t.seller} ${post.vendeur_name} (${post.wilaya || 'غير محددة'})</span>
-        </div>
-        <div class="space-y-1.5 pt-2 border-t border-slate-800">
-            <div class="flex justify-between text-slate-300">
-                <span>${t.itemPrice}</span>
-                <span class="font-mono">${post.price.toLocaleString()} ${t.dzdCurrency}</span>
+    const body = document.getElementById('checkout-details-body');
+    if (body) {
+        body.innerHTML = `
+            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
+                <span class="text-white font-bold block">${post.title}</span>
+                <span class="text-slate-400 block">${t.seller} ${post.vendeur_name} (${post.wilaya || 'غير محددة'})</span>
             </div>
-            <div class="flex justify-between text-amber-400">
-                <span>${t.protectionFee}</span>
-                <span class="font-mono">+${commission.toLocaleString()} ${t.dzdCurrency}</span>
+            <div class="space-y-1.5 pt-2 border-t border-slate-800">
+                <div class="flex justify-between text-slate-300">
+                    <span>${t.itemPrice}</span>
+                    <span class="font-mono">${post.price.toLocaleString()} ${t.dzdCurrency}</span>
+                </div>
+                <div class="flex justify-between text-amber-400">
+                    <span>${t.protectionFee}</span>
+                    <span class="font-mono">+${commission.toLocaleString()} ${t.dzdCurrency}</span>
+                </div>
+                <div class="flex justify-between text-white font-bold text-sm pt-2 border-t border-slate-800">
+                    <span>${t.totalAmount}</span>
+                    <span class="font-mono text-emerald-400">${total.toLocaleString()} ${t.dzdCurrency}</span>
+                </div>
             </div>
-            <div class="flex justify-between text-white font-bold text-sm pt-2 border-t border-slate-800">
-                <span>${t.totalAmount}</span>
-                <span class="font-mono text-emerald-400">${total.toLocaleString()} ${t.dzdCurrency}</span>
-            </div>
-        </div>
-    `;
+        `;
+    }
 
     document.getElementById('modal-checkout').classList.remove('hidden');
 }
@@ -867,18 +912,105 @@ function confirmOrderPayment() {
     showToast(currentLang === 'ar' ? 'تم الدفع واحتجاز المبلغ بالدينار الجزائري في الضمان المالي!' : 'Payment confirmed and funds held in escrow!');
 }
 
+function openProductDetailModal(postId) {
+    const p = db.posts.find(item => item.id === postId);
+    if (!p) return;
+
+    const t = translations[currentLang];
+    const container = document.getElementById('product-detail-content');
+    if (!container) return;
+
+    container.innerHTML = `
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="h-64 md:h-full w-full rounded-xl overflow-hidden bg-slate-950 border border-slate-800 relative">
+                <img src="${p.img}" alt="${p.title}" class="w-full h-full object-cover">
+                <span class="absolute top-3 right-3 bg-emerald-500 text-slate-950 text-xs font-bold px-2.5 py-1 rounded-lg">
+                    ${t.approvedStatus}
+                </span>
+            </div>
+            
+            <div class="space-y-3 flex flex-col justify-between">
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center text-xs text-amber-400 font-bold">
+                        <span>${p.brand}</span>
+                        <span class="text-slate-400 font-normal"><i data-lucide="map-pin" class="w-3 h-3 inline"></i> ${p.wilaya || 'غير محددة'}</span>
+                    </div>
+                    <h2 class="text-lg font-bold text-white">${p.title}</h2>
+                    <p class="text-xs text-slate-300 leading-relaxed bg-slate-950 p-3 rounded-xl border border-slate-800">
+                        ${p.description}
+                    </p>
+                    <div class="space-y-1 text-xs text-slate-400 pt-1">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                            <span>${t.conditionLabel} <strong class="text-slate-200">${t.conditionNew}</strong></span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="truck" class="w-4 h-4 text-amber-400"></i>
+                            <span>${t.shippingAvailable}</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="user" class="w-4 h-4 text-amber-400"></i>
+                            <span>${t.seller} <strong class="text-slate-200">${p.vendeur_name}</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-3 border-t border-slate-800 flex items-center justify-between gap-2">
+                    <div>
+                        <span class="text-[10px] text-slate-400 block">${t.priceDzd}</span>
+                        <span class="text-xl font-black text-amber-400 font-mono">${p.price.toLocaleString()} <span class="text-xs font-normal">${t.dzdCurrency}</span></span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="shareProductLink(${p.id})" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs p-2.5 rounded-xl border border-slate-700 transition">
+                            <i data-lucide="share-2" class="w-4 h-4"></i>
+                        </button>
+                        <button onclick="closeModal('modal-product-detail'); openCheckoutModal(${p.id});" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs px-4 py-2.5 rounded-xl transition flex items-center gap-1.5">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-slate-950"></i> ${t.buyWithEscrow}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.getElementById('modal-product-detail').classList.remove('hidden');
+    lucide.createIcons();
+}
+
+function shareProductLink(postId) {
+    const post = db.posts.find(p => p.id === postId);
+    if (!post) return;
+
+    const shareUrl = window.location.href.split('?')[0] + `?part=${postId}`;
+    const shareData = {
+        title: post.title,
+        text: `تفقد قطعة الغيار: ${post.title} بسعر ${post.price} DZD على منصة سيارتي بروكر`,
+        url: shareUrl
+    };
+
+    if (navigator.share) {
+        navigator.share(shareData).catch(() => {});
+    } else {
+        navigator.clipboard.writeText(shareUrl).then(() => {
+            const t = translations[currentLang];
+            showToast(t.copiedToClipboard || 'تم نسخ الرابط!');
+        });
+    }
+}
+
 function closeModal(id) {
     document.getElementById(id).classList.add('hidden');
 }
 
 function showToast(msg, type = 'success') {
     const container = document.getElementById('toast-container');
+    if (!container) return;
     const toast = document.createElement('div');
     toast.className = `p-3.5 rounded-xl text-xs font-bold text-white shadow-xl flex items-center gap-2 pointer-events-auto border transition duration-300 ${
-        type === 'error' ? 'bg-red-950/90 border-red-500/80 text-red-200' : 'bg-slate-900 border-brand-500/50 text-slate-100'
+        type === 'error' ? 'bg-red-950/90 border-red-500/80 text-red-200' : 'bg-slate-900 border-amber-500/50 text-slate-100'
     }`;
     toast.innerHTML = `
-        <i data-lucide="${type === 'error' ? 'alert-circle' : 'check-circle-2'}" class="w-4 h-4 ${type === 'error' ? 'text-red-400' : 'text-emerald-400'}"></i>
+        <i data-lucide="${type === 'error' ? 'alert-circle' : 'check-circle-2'}" class="w-4 h-4 ${type === 'error' ? 'text-red-400' : 'text-amber-400'}"></i>
         <span>${msg}</span>
     `;
     container.appendChild(toast);
