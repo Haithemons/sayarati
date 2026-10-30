@@ -37,81 +37,87 @@
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen pb-20 md:pb-6 transition-colors duration-300 selection:bg-brand-500 selection:text-white">
 
-    <!-- ==================== AUTH PORTAL SCREEN (تصميم زجاج زجاجي شفاف وخلفية سيارة) ==================== -->
-    <div id="auth-portal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-cover bg-center relative" style="background-image: linear-gradient(to bottom, rgba(2, 6, 23, 0.75), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80');">
+    <!-- ==================== AUTH PORTAL SCREEN (شاشة التسجيل الزجاجية مع السيارة وقطع الغيار الـ 3D) ==================== -->
+    <div id="auth-portal" class="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 bg-cover bg-center relative" style="background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.75)), url('watermarked_img_8706583782182684989.jpg');">
         
-        <div class="glass-card rounded-3xl w-full max-w-md p-6 md:p-8 space-y-6 relative overflow-hidden text-slate-100 shadow-2xl">
-            <div class="absolute -top-20 -right-20 w-40 h-40 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <!-- عنوان الشعار والمنصة في أعلى شاشة التسجيل[cite: 5] -->
+        <div class="text-center space-y-1 mb-6 text-white relative z-10">
+            <h1 data-i18n="brandName" class="text-3xl md:text-4xl font-black text-cyan-400 drop-shadow-md flex items-center justify-center gap-2">
+                سيارتي <i data-lucide="wrench" class="w-8 h-8 text-slate-200"></i> بروكر
+            </h1>
+            <p data-i18n="authSubtitle" class="text-sm font-semibold text-slate-200 drop-shadow">منصة وسيط قطع الغيار بالجزائر</p>
+        </div>
 
-            <!-- Logo Header -->
-            <div class="text-center space-y-2 relative z-10">
-                <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-brand-600 to-amber-500 flex items-center justify-center shadow-lg shadow-brand-500/20 mx-auto">
-                    <i data-lucide="wrench" class="w-8 h-8 text-white"></i>
-                </div>
-                <h1 data-i18n="brandName" class="text-2xl font-black bg-gradient-to-r from-white via-slate-200 to-brand-400 bg-clip-text text-transparent">سيارتي بروكر</h1>
-                <p data-i18n="authSubtitle" class="text-xs text-slate-300">سجل الدخول أو أنشئ حساباً للوصول إلى المنصة</p>
+        <!-- البطاقة الزجاجية المعلقة بنفس الشكل المطلوب بالضبط[cite: 5] -->
+        <div class="glass-box rounded-3xl w-full max-w-sm p-6 md:p-7 space-y-5 relative text-slate-100 shadow-2xl">
+            
+            <!-- زر التبويب العلوي المحفور بكلمة Login / Register[cite: 5] -->
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-slate-900/90 border border-white/20 px-7 py-1 rounded-full shadow-lg">
+                <h2 id="portal-title-badge" class="text-xs font-extrabold tracking-wider text-slate-100">Login</h2>
             </div>
 
-            <!-- Mode & Language Switchers -->
-            <div class="flex items-center justify-center gap-2 relative z-10">
-                <button onclick="toggleTheme()" class="bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs px-3 py-1.5 rounded-lg border border-slate-700/50 flex items-center gap-1.5 transition">
-                    <i id="theme-icon" data-lucide="sun" class="w-3.5 h-3.5"></i>
-                </button>
-                <button onclick="switchLanguage(currentLang === 'ar' ? 'en' : 'ar')" class="bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-bold px-3 py-1.5 rounded-lg border border-slate-700/50 transition">
-                    <span id="lang-toggle-btn">EN</span>
-                </button>
+            <!-- أزرار تبديل اللغة والثيم وشكل الدخول -->
+            <div class="flex items-center justify-between pt-1">
+                <div class="flex items-center gap-1.5">
+                    <button onclick="toggleTheme()" class="bg-white/10 hover:bg-white/20 text-slate-100 p-1.5 rounded-lg border border-white/15 transition" title="تغيير المظهر">
+                        <i id="theme-icon" data-lucide="sun" class="w-3.5 h-3.5"></i>
+                    </button>
+                    <button onclick="switchLanguage(currentLang === 'ar' ? 'en' : 'ar')" class="bg-white/10 hover:bg-white/20 text-slate-100 text-xs font-bold px-2 py-1 rounded-lg border border-white/15 transition">
+                        <span id="lang-toggle-btn">EN</span>
+                    </button>
+                </div>
+                <div class="flex gap-1 text-[11px] bg-black/40 p-1 rounded-xl border border-white/10">
+                    <button type="button" onclick="toggleAuthMode('login')" id="tab-login-btn" data-i18n="loginTab" class="px-2.5 py-0.5 font-bold rounded-lg transition bg-brand-600 text-white">دخول</button>
+                    <button type="button" onclick="toggleAuthMode('register')" id="tab-register-btn" data-i18n="registerTab" class="px-2.5 py-0.5 font-semibold rounded-lg transition text-slate-300 hover:text-white">جديد</button>
+                </div>
             </div>
 
-            <!-- Auth Tabs -->
-            <div class="flex bg-black/40 p-1 rounded-xl border border-white/10 relative z-10">
-                <button type="button" onclick="toggleAuthMode('login')" id="tab-login-btn" data-i18n="loginTab" class="flex-1 py-2 text-xs font-bold rounded-lg transition bg-brand-600 text-white shadow">تسجيل الدخول</button>
-                <button type="button" onclick="toggleAuthMode('register')" id="tab-register-btn" data-i18n="registerTab" class="flex-1 py-2 text-xs font-bold rounded-lg transition text-slate-400 hover:text-white">حساب جديد</button>
-            </div>
+            <!-- LOGIN FORM[cite: 5] -->
+            <form id="form-login" onsubmit="handleLoginSubmit(event)" class="space-y-3.5 pt-1">
+                <div class="glass-input-box rounded-2xl px-3.5 py-2 flex items-center justify-between transition">
+                    <input type="email" id="login-email" required placeholder="Username" class="w-full bg-transparent text-slate-100 text-xs outline-none placeholder:text-slate-300">
+                    <i data-lucide="user" class="w-4 h-4 text-slate-300 flex-shrink-0"></i>
+                </div>
+                
+                <div class="glass-input-box rounded-2xl px-3.5 py-2 flex items-center justify-between transition">
+                    <input type="password" id="login-password" required placeholder="Password" class="w-full bg-transparent text-slate-100 text-xs outline-none placeholder:text-slate-300">
+                    <i data-lucide="lock" class="w-4 h-4 text-slate-300 flex-shrink-0"></i>
+                </div>
 
-            <!-- LOGIN FORM -->
-            <form id="form-login" onsubmit="handleLoginSubmit(event)" class="space-y-4 relative z-10">
-                <div>
-                    <label data-i18n="emailLabel" class="block text-xs font-semibold text-slate-300 mb-1.5">البريد الإلكتروني</label>
-                    <div class="relative">
-                        <input type="email" id="login-email" required placeholder="ounnashaithem3@gmail.com" class="w-full glass-input text-slate-100 text-xs rounded-xl px-4 py-3 outline-none transition rtl:pr-10 ltr:pl-10">
-                        <i data-lucide="mail" class="w-4 h-4 text-slate-400 absolute rtl:right-3.5 ltr:left-3.5 top-3.5"></i>
-                    </div>
+                <div class="flex items-center justify-between text-[11px] text-slate-200 px-1">
+                    <label class="flex items-center gap-1.5 cursor-pointer">
+                        <input type="checkbox" class="rounded bg-slate-900 border-slate-700 text-brand-600 focus:ring-0"> Remember me
+                    </label>
+                    <span class="text-slate-300 hover:text-white cursor-pointer transition">Forgot password?</span>
                 </div>
-                <div>
-                    <label data-i18n="passwordLabel" class="block text-xs font-semibold text-slate-300 mb-1.5">كلمة المرور</label>
-                    <div class="relative">
-                        <input type="password" id="login-password" required placeholder="••••••••" class="w-full glass-input text-slate-100 text-xs rounded-xl px-4 py-3 outline-none transition rtl:pr-10 ltr:pl-10">
-                        <i data-lucide="lock" class="w-4 h-4 text-slate-400 absolute rtl:right-3.5 ltr:left-3.5 top-3.5"></i>
-                    </div>
-                </div>
-                <button type="submit" class="w-full bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-600 text-white font-bold text-xs py-3.5 rounded-xl shadow-lg shadow-brand-500/25 transition flex items-center justify-center gap-2">
-                    <i data-lucide="log-in" class="w-4 h-4"></i> <span data-i18n="loginBtn">دخول إلى المنصة</span>
+
+                <button type="submit" class="w-full bg-slate-100 hover:bg-white text-slate-950 font-bold text-xs py-2.5 rounded-full shadow-xl transition flex items-center justify-center gap-2 mt-2">
+                    <span data-i18n="loginBtn">Login</span>
                 </button>
+
+                <p class="text-[11px] text-center text-slate-300 pt-1">
+                    Don't have an account? <span onclick="toggleAuthMode('register')" class="text-white underline cursor-pointer font-bold">Register</span>
+                </p>
             </form>
 
             <!-- REGISTER FORM -->
-            <form id="form-register" onsubmit="handleRegisterSubmit(event)" class="space-y-4 hidden relative z-10">
-                <div>
-                    <label data-i18n="usernameLabel" class="block text-xs font-semibold text-slate-300 mb-1.5">اسم المستخدم / المؤسسة</label>
-                    <input type="text" id="reg-username" required placeholder="مثال: ورشة أو تاجر قطع غيار" class="w-full glass-input text-slate-100 text-xs rounded-xl px-4 py-3 outline-none transition">
+            <form id="form-register" onsubmit="handleRegisterSubmit(event)" class="space-y-3 hidden pt-1">
+                <div class="glass-input-box rounded-2xl px-3.5 py-2 flex items-center justify-between">
+                    <input type="text" id="reg-username" required placeholder="Full Name / Workshop" class="w-full bg-transparent text-slate-100 text-xs outline-none placeholder:text-slate-300">
+                    <i data-lucide="user-plus" class="w-4 h-4 text-slate-300"></i>
                 </div>
-                <div>
-                    <label data-i18n="emailLabel" class="block text-xs font-semibold text-slate-300 mb-1.5">البريد الإلكتروني</label>
-                    <input type="email" id="reg-email" required placeholder="user@domain.dz" class="w-full glass-input text-slate-100 text-xs rounded-xl px-4 py-3 outline-none transition">
+                <div class="glass-input-box rounded-2xl px-3.5 py-2 flex items-center justify-between">
+                    <input type="email" id="reg-email" required placeholder="Email Address" class="w-full bg-transparent text-slate-100 text-xs outline-none placeholder:text-slate-300">
+                    <i data-lucide="mail" class="w-4 h-4 text-slate-300"></i>
                 </div>
-                <div>
-                    <label data-i18n="passwordLabel" class="block text-xs font-semibold text-slate-300 mb-1.5">كلمة المرور</label>
-                    <input type="password" id="reg-password" required placeholder="••••••••" class="w-full glass-input text-slate-100 text-xs rounded-xl px-4 py-3 outline-none transition">
+                <div class="glass-input-box rounded-2xl px-3.5 py-2 flex items-center justify-between">
+                    <input type="password" id="reg-password" required placeholder="Password" class="w-full bg-transparent text-slate-100 text-xs outline-none placeholder:text-slate-300">
+                    <i data-lucide="lock" class="w-4 h-4 text-slate-300"></i>
                 </div>
-                <div data-i18n="registerNote" class="bg-brand-500/10 border border-brand-500/20 p-2.5 rounded-xl text-[10px] text-brand-300">
-                    ملاحظة: بحسابك الجديد يمكنك تصفح الإعلانات، طلب قطع الغيار، ورفع إعلاناتك للبيع بكل أريحية.
-                </div>
-                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
-                    <i data-lucide="user-plus" class="w-4 h-4"></i> <span data-i18n="registerBtn">إنشاء الحساب وتأكيده</span>
+                <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs py-2.5 rounded-full shadow-lg transition mt-2">
+                    <span data-i18n="registerBtn">Create Account</span>
                 </button>
             </form>
-
-            <p data-i18n="authFooter" class="text-[11px] text-center text-slate-400 relative z-10">منصة الوسيط التجاري المعتمد لحماية التعاملات المالية بالجزائر د.ج</p>
         </div>
     </div>
 
