@@ -16,16 +16,16 @@ const wilayasList = [
 const translations = {
     ar: {
         brandName: "سيارتي بروكر",
-        brandTagline: "منصة الوسيط المعتمد لقطع الغيار (الجزائر)",
-        authSubtitle: "سجل الدخول أو أنشئ حساباً للوصول إلى المنصة",
+        brandTagline: "منصة وسيط قطع الغيار بالجزائر",
+        authSubtitle: "منصة وسيط قطع الغيار بالجزائر",
         loginTab: "تسجيل الدخول",
         registerTab: "حساب جديد",
         emailLabel: "البريد الإلكتروني",
         passwordLabel: "كلمة المرور",
         usernameLabel: "اسم المستخدم / المؤسسة",
-        loginBtn: "دخول إلى المنصة",
+        loginBtn: "Login",
         registerBtn: "إنشاء الحساب وتأكيده",
-        registerNote: "ملاحظة: بحسابك الجديد يمكنك تصفح الإعلانات، طلب قطع الغيار، ورفع إعلاناتك للبيع بكل أريحية.",
+        registerNote: "ملاحظة: بحسابك الجديد يمكنك تصفح الإعلانات وطلب قطع الغيار بسهولة.",
         authFooter: "منصة الوسيط التجاري المعتمد لحماية التعاملات المالية بالجزائر د.ج",
         navCatalog: "الإعلانات والقطع",
         navMessages: "الرسائل",
@@ -98,16 +98,16 @@ const translations = {
     },
     en: {
         brandName: "Sayarati Broker",
-        brandTagline: "Certified Spare Parts Brokerage Platform (Algeria)",
-        authSubtitle: "Sign in or create an account to access the platform",
-        loginTab: "Sign In",
-        registerTab: "New Account",
-        emailLabel: "Email Address",
+        brandTagline: "Spare Parts Brokerage Platform",
+        authSubtitle: "Spare Parts Brokerage Platform",
+        loginTab: "Login",
+        registerTab: "Register",
+        emailLabel: "Username or Email",
         passwordLabel: "Password",
         usernameLabel: "Username / Organization",
-        loginBtn: "Enter Platform",
+        loginBtn: "Login",
         registerBtn: "Create & Confirm Account",
-        registerNote: "Note: With a new account, you can browse listings, order spare parts, and publish items for sale.",
+        registerNote: "Note: Browse listings and order auto parts easily with a new account.",
         authFooter: "Certified commercial brokerage platform protecting financial transactions in Algeria (DZD)",
         navCatalog: "Listings & Parts",
         navMessages: "Messages",
@@ -385,19 +385,16 @@ function checkSavedSession() {
 function toggleAuthMode(mode) {
     const formLogin = document.getElementById('form-login');
     const formRegister = document.getElementById('form-register');
-    const btnLogin = document.getElementById('tab-login-btn');
-    const btnRegister = document.getElementById('tab-register-btn');
+    const badgeTitle = document.getElementById('portal-title-badge');
 
     if (mode === 'login') {
         formLogin.classList.remove('hidden');
         formRegister.classList.add('hidden');
-        btnLogin.className = "flex-1 py-2 text-xs font-bold rounded-lg transition bg-brand-600 text-white shadow";
-        btnRegister.className = "flex-1 py-2 text-xs font-bold rounded-lg transition text-slate-400 hover:text-white";
+        if (badgeTitle) badgeTitle.innerText = "Login";
     } else {
         formLogin.classList.add('hidden');
         formRegister.classList.remove('hidden');
-        btnRegister.className = "flex-1 py-2 text-xs font-bold rounded-lg transition bg-brand-600 text-white shadow";
-        btnLogin.className = "flex-1 py-2 text-xs font-bold rounded-lg transition text-slate-400 hover:text-white";
+        if (badgeTitle) badgeTitle.innerText = "Register";
     }
 }
 
