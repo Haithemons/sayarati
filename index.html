@@ -14,15 +14,15 @@
             theme: {
                 extend: {
                     colors: {
+                        gold: {
+                            400: '#f59e0b',
+                            500: '#d97706',
+                            600: '#b45309'
+                        },
                         brand: {
-                            50: '#f0f7ff',
-                            100: '#e0effe',
                             500: '#0284c7',
                             600: '#0284c7',
                             700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                            accent: '#f59e0b'
                         }
                     },
                     fontFamily: {
@@ -32,33 +32,29 @@
             }
         }
     </script>
-    <!-- CSS File -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen pb-20 md:pb-6 transition-colors duration-300 selection:bg-brand-500 selection:text-white">
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col md:flex-row transition-colors duration-300 selection:bg-amber-500 selection:text-black">
 
-    <!-- ==================== AUTH PORTAL SCREEN (شاشة التسجيل الزجاجية مع خلفية السيارة) ==================== -->
-<div id="auth-portal" class="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 relative overflow-y-auto" style="background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 100vh;">        
-        <!-- عنوان الشعار والمنصة في أعلى شاشة التسجيل -->
+    <!-- ==================== AUTH PORTAL SCREEN ==================== -->
+    <div id="auth-portal" class="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 overflow-y-auto" style="background: linear-gradient(to bottom, rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; min-height: 100vh;">
+        
         <div class="text-center space-y-1 mb-6 text-white relative z-10">
-            <h1 data-i18n="brandName" class="text-3xl md:text-4xl font-black text-cyan-400 drop-shadow-md flex items-center justify-center gap-2">
-                سيارتي <i data-lucide="wrench" class="w-8 h-8 text-slate-200"></i> بروكر
+            <h1 data-i18n="brandName" class="text-3xl md:text-4xl font-black text-amber-400 drop-shadow-md flex items-center justify-center gap-2">
+                سيارتي <i data-lucide="wrench" class="w-8 h-8 text-amber-500"></i> بروكر
             </h1>
-            <p data-i18n="authSubtitle" class="text-sm font-semibold text-slate-200 drop-shadow">منصة وسيط قطع الغيار بالجزائر</p>
+            <p data-i18n="authSubtitle" class="text-sm font-semibold text-slate-300">منصة وسيط قطع الغيار بالجزائر</p>
         </div>
 
-        <!-- البطاقة الزجاجية المعلقة -->
-        <div class="glass-box rounded-3xl w-full max-w-sm p-6 md:p-7 space-y-5 relative text-slate-100 shadow-2xl">
+        <div class="glass-box rounded-3xl w-full max-w-sm p-6 md:p-7 space-y-5 relative text-slate-100 shadow-2xl border border-amber-500/20">
             
-            <!-- زر التبويب العلوي المحفور بكلمة Login / Register -->
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-slate-900/90 border border-white/20 px-7 py-1 rounded-full shadow-lg">
-                <h2 id="portal-title-badge" class="text-xs font-extrabold tracking-wider text-slate-100">Login</h2>
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-slate-900 border border-amber-500/30 px-7 py-1 rounded-full shadow-lg">
+                <h2 id="portal-title-badge" class="text-xs font-extrabold tracking-wider text-amber-400">Login</h2>
             </div>
 
-            <!-- أزرار تبديل اللغة والثيم وشكل الدخول -->
             <div class="flex items-center justify-between pt-1">
                 <div class="flex items-center gap-1.5">
-                    <button onclick="toggleTheme()" class="bg-white/10 hover:bg-white/20 text-slate-100 p-1.5 rounded-lg border border-white/15 transition" title="تغيير المظهر">
+                    <button onclick="toggleTheme()" class="bg-white/10 hover:bg-white/20 text-slate-100 p-1.5 rounded-lg border border-white/15 transition">
                         <i id="theme-icon" data-lucide="sun" class="w-3.5 h-3.5"></i>
                     </button>
                     <button onclick="switchLanguage(currentLang === 'ar' ? 'en' : 'ar')" class="bg-white/10 hover:bg-white/20 text-slate-100 text-xs font-bold px-2 py-1 rounded-lg border border-white/15 transition">
@@ -66,7 +62,7 @@
                     </button>
                 </div>
                 <div class="flex gap-1 text-[11px] bg-black/40 p-1 rounded-xl border border-white/10">
-                    <button type="button" onclick="toggleAuthMode('login')" id="tab-login-btn" data-i18n="loginTab" class="px-2.5 py-0.5 font-bold rounded-lg transition bg-brand-600 text-white">دخول</button>
+                    <button type="button" onclick="toggleAuthMode('login')" id="tab-login-btn" data-i18n="loginTab" class="px-2.5 py-0.5 font-bold rounded-lg transition bg-amber-500 text-slate-950">دخول</button>
                     <button type="button" onclick="toggleAuthMode('register')" id="tab-register-btn" data-i18n="registerTab" class="px-2.5 py-0.5 font-semibold rounded-lg transition text-slate-300 hover:text-white">جديد</button>
                 </div>
             </div>
@@ -74,44 +70,44 @@
             <!-- LOGIN FORM -->
             <form id="form-login" onsubmit="handleLoginSubmit(event)" class="space-y-3.5 pt-1">
                 <div class="glass-input-box rounded-2xl px-3.5 py-2 flex items-center justify-between transition">
-                    <input type="email" id="login-email" required placeholder="Username" class="w-full bg-transparent text-slate-100 text-xs outline-none placeholder:text-slate-300">
-                    <i data-lucide="user" class="w-4 h-4 text-slate-300 flex-shrink-0"></i>
+                    <input type="email" id="login-email" required placeholder="Email Address" class="w-full bg-transparent text-slate-100 text-xs outline-none placeholder:text-slate-400">
+                    <i data-lucide="user" class="w-4 h-4 text-slate-400 flex-shrink-0"></i>
                 </div>
                 
                 <div class="glass-input-box rounded-2xl px-3.5 py-2 flex items-center justify-between transition">
-                    <input type="password" id="login-password" required placeholder="Password" class="w-full bg-transparent text-slate-100 text-xs outline-none placeholder:text-slate-300">
-                    <i data-lucide="lock" class="w-4 h-4 text-slate-300 flex-shrink-0"></i>
+                    <input type="password" id="login-password" required placeholder="Password" class="w-full bg-transparent text-slate-100 text-xs outline-none placeholder:text-slate-400">
+                    <i data-lucide="lock" class="w-4 h-4 text-slate-400 flex-shrink-0"></i>
                 </div>
 
-                <div class="flex items-center justify-between text-[11px] text-slate-200 px-1">
+                <div class="flex items-center justify-between text-[11px] text-slate-300 px-1">
                     <label class="flex items-center gap-1.5 cursor-pointer">
-                        <input type="checkbox" class="rounded bg-slate-900 border-slate-700 text-brand-600 focus:ring-0"> Remember me
+                        <input type="checkbox" class="rounded bg-slate-900 border-slate-700 text-amber-500 focus:ring-0"> Remember me
                     </label>
-                    <span class="text-slate-300 hover:text-white cursor-pointer transition">Forgot password?</span>
+                    <span class="text-slate-400 hover:text-white cursor-pointer transition">Forgot password?</span>
                 </div>
 
-                <button type="submit" class="w-full bg-slate-100 hover:bg-white text-slate-950 font-bold text-xs py-2.5 rounded-full shadow-xl transition flex items-center justify-center gap-2 mt-2">
+                <button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs py-2.5 rounded-full shadow-xl transition flex items-center justify-center gap-2 mt-2">
                     <span data-i18n="loginBtn">Login</span>
                 </button>
 
-                <p class="text-[11px] text-center text-slate-300 pt-1">
-                    Don't have an account? <span onclick="toggleAuthMode('register')" class="text-white underline cursor-pointer font-bold">Register</span>
+                <p class="text-[11px] text-center text-slate-400 pt-1">
+                    Don't have an account? <span onclick="toggleAuthMode('register')" class="text-amber-400 underline cursor-pointer font-bold">Register</span>
                 </p>
             </form>
 
             <!-- REGISTER FORM -->
             <form id="form-register" onsubmit="handleRegisterSubmit(event)" class="space-y-3 hidden pt-1">
                 <div class="glass-input-box rounded-2xl px-3.5 py-2 flex items-center justify-between">
-                    <input type="text" id="reg-username" required placeholder="Full Name / Workshop" class="w-full bg-transparent text-slate-100 text-xs outline-none placeholder:text-slate-300">
-                    <i data-lucide="user-plus" class="w-4 h-4 text-slate-300"></i>
+                    <input type="text" id="reg-username" required placeholder="Full Name / Workshop" class="w-full bg-transparent text-slate-100 text-xs outline-none placeholder:text-slate-400">
+                    <i data-lucide="user-plus" class="w-4 h-4 text-slate-400"></i>
                 </div>
                 <div class="glass-input-box rounded-2xl px-3.5 py-2 flex items-center justify-between">
-                    <input type="email" id="reg-email" required placeholder="Email Address" class="w-full bg-transparent text-slate-100 text-xs outline-none placeholder:text-slate-300">
-                    <i data-lucide="mail" class="w-4 h-4 text-slate-300"></i>
+                    <input type="email" id="reg-email" required placeholder="Email Address" class="w-full bg-transparent text-slate-100 text-xs outline-none placeholder:text-slate-400">
+                    <i data-lucide="mail" class="w-4 h-4 text-slate-400"></i>
                 </div>
                 <div class="glass-input-box rounded-2xl px-3.5 py-2 flex items-center justify-between">
-                    <input type="password" id="reg-password" required placeholder="Password" class="w-full bg-transparent text-slate-100 text-xs outline-none placeholder:text-slate-300">
-                    <i data-lucide="lock" class="w-4 h-4 text-slate-300"></i>
+                    <input type="password" id="reg-password" required placeholder="Password" class="w-full bg-transparent text-slate-100 text-xs outline-none placeholder:text-slate-400">
+                    <i data-lucide="lock" class="w-4 h-4 text-slate-400"></i>
                 </div>
                 <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs py-2.5 rounded-full shadow-lg transition mt-2">
                     <span data-i18n="registerBtn">Create Account</span>
@@ -120,86 +116,91 @@
         </div>
     </div>
 
-    <!-- Header Navigation -->
-    <header id="main-header" class="sticky top-0 z-40 w-full border-b border-slate-800 bg-slate-900/90 backdrop-blur-md hidden">
-        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('catalog')">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-amber-500 flex items-center justify-center shadow-lg shadow-brand-500/20">
-                    <i data-lucide="wrench" class="w-6 h-6 text-white"></i>
+    <!-- ==================== SIDEBAR NAVIGATION (البار الجانبي الاحترافي) ==================== -->
+    <aside id="main-header" class="w-full md:w-64 bg-slate-900/95 border-b md:border-b-0 rtl:md:border-l ltr:md:border-r border-slate-800/80 p-4 flex flex-col justify-between md:min-h-screen md:sticky md:top-0 z-40 hidden shadow-2xl backdrop-blur-md">
+        <div class="space-y-6">
+            <!-- الشعار -->
+            <div class="flex items-center gap-3 cursor-pointer p-2 rounded-2xl hover:bg-slate-800/50 transition border border-transparent hover:border-amber-500/20" onclick="switchTab('catalog')">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-500 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/20">
+                    <i data-lucide="wrench" class="w-6 h-6 text-slate-950"></i>
                 </div>
                 <div>
-                    <span data-i18n="brandName" class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-brand-500 bg-clip-text text-transparent">سيارتي بروكر</span>
-                    <span data-i18n="brandTagline" class="block text-[10px] text-amber-400 font-medium -mt-1">منصة الوسيط المعتمد لقطع الغيار (الجزائر)</span>
+                    <span data-i18n="brandName" class="text-lg font-black tracking-tight text-white block">سيارتي بروكر</span>
+                    <span data-i18n="brandTagline" class="text-[10px] text-amber-400 font-medium block">وسيط قطع الغيار معتمد</span>
                 </div>
             </div>
 
-            <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center gap-5">
-                <button onclick="switchTab('catalog')" id="nav-catalog" class="text-brand-400 font-bold text-sm flex items-center gap-1.5 transition-colors">
-                    <i data-lucide="grid" class="w-4 h-4"></i> <span data-i18n="navCatalog">الإعلانات والقطع</span>
+            <!-- قائمة التنقل الجانبية الفاخرة -->
+            <nav class="space-y-1.5">
+                <button onclick="switchTab('catalog')" id="nav-catalog" class="w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs font-bold text-slate-300 hover:text-white hover:bg-slate-800 transition">
+                    <i data-lucide="grid" class="w-4 h-4 text-amber-400"></i> <span data-i18n="navCatalog">الإعلانات والقطع</span>
                 </button>
-                <button onclick="switchTab('messages')" id="nav-messages" class="text-slate-300 hover:text-white font-medium text-sm flex items-center gap-1.5 transition-colors relative">
-                    <i data-lucide="message-square" class="w-4 h-4"></i> <span data-i18n="navMessages">الرسائل</span>
+
+                <button onclick="switchTab('messages')" id="nav-messages" class="w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition">
+                    <i data-lucide="message-square" class="w-4 h-4 text-blue-400"></i> <span data-i18n="navMessages">الرسائل والمحادثات</span>
                 </button>
-                <button onclick="switchTab('ratings')" id="nav-ratings" class="text-slate-300 hover:text-white font-medium text-sm flex items-center gap-1.5 transition-colors">
-                    <i data-lucide="star" class="w-4 h-4 text-amber-400"></i> <span data-i18n="navRatings">التقييمات</span>
+
+                <button onclick="switchTab('ratings')" id="nav-ratings" class="w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition">
+                    <i data-lucide="star" class="w-4 h-4 text-amber-400"></i> <span data-i18n="navRatings">التقييمات والسمعة</span>
                 </button>
-                <button onclick="switchTab('escrow-info')" id="nav-escrow" class="text-slate-300 hover:text-white font-medium text-sm flex items-center gap-1.5 transition-colors">
+
+                <button onclick="switchTab('escrow-info')" id="nav-escrow" class="w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition">
                     <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i> <span data-i18n="navEscrow">الضمان والوساطة</span>
                 </button>
-                <button onclick="switchTab('admin-dash')" id="nav-admin" class="text-red-400 hover:text-red-300 font-bold text-sm hidden items-center gap-1.5 transition-colors">
+
+                <button onclick="switchTab('admin-dash')" id="nav-admin" class="w-full hidden items-center gap-3 px-3.5 py-3 rounded-xl text-xs font-bold text-red-400 hover:bg-red-500/10 transition border border-red-500/20">
                     <i data-lucide="shield-alert" class="w-4 h-4"></i> <span data-i18n="navAdmin">لوحة الأدمن</span>
                 </button>
             </nav>
+        </div>
 
-            <!-- Mode, Lang & Logout -->
-            <div class="flex items-center gap-2">
-                <button onclick="toggleTheme()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 p-2 rounded-lg border border-slate-700 transition" title="Toggle Theme">
-                    <i data-lucide="sun" class="w-4 h-4"></i>
+        <!-- الجزء السفلي: التحكم بالحساب والإعدادات -->
+        <div class="pt-4 border-t border-slate-800/80 space-y-3">
+            <div id="auth-container" class="w-full"></div>
+
+            <div class="flex items-center justify-between gap-1 bg-slate-950 p-1.5 rounded-xl border border-slate-800">
+                <button onclick="toggleTheme()" class="flex-1 bg-slate-900 hover:bg-slate-800 text-slate-300 py-1.5 rounded-lg border border-slate-700/50 transition flex items-center justify-center gap-1 text-[11px]">
+                    <i id="theme-icon" data-lucide="sun" class="w-3.5 h-3.5"></i>
                 </button>
-                <button onclick="switchLanguage(currentLang === 'ar' ? 'en' : 'ar')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold px-2.5 py-1.5 rounded-lg border border-slate-700 transition">
+                <button onclick="switchLanguage(currentLang === 'ar' ? 'en' : 'ar')" class="flex-1 bg-slate-900 hover:bg-slate-800 text-slate-200 py-1.5 rounded-lg border border-slate-700/50 transition text-[11px] font-bold">
                     <span id="lang-toggle-btn">EN</span>
                 </button>
-                <div id="auth-container"></div>
-                <button onclick="logoutUser()" class="bg-slate-800 hover:bg-red-600/20 text-slate-300 hover:text-red-400 p-2 rounded-lg border border-slate-700 transition" title="Logout">
-                    <i data-lucide="log-out" class="w-4 h-4"></i>
+                <button onclick="logoutUser()" class="flex-1 bg-red-500/10 hover:bg-red-500/20 text-red-400 py-1.5 rounded-lg border border-red-500/20 transition flex items-center justify-center" title="Logout">
+                    <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
                 </button>
             </div>
         </div>
-    </header>
+    </aside>
 
-    <!-- Main Content Area -->
-    <main id="main-content" class="max-w-7xl mx-auto px-4 py-6 hidden">
+    <!-- MAIN CONTENT AREA -->
+    <main id="main-content" class="flex-1 max-w-7xl px-4 md:px-8 py-6 hidden space-y-6">
 
-        <!-- Banner -->
-        <div class="mb-6 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-800 p-4 md:p-6 shadow-xl relative overflow-hidden">
-            <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
-                <div class="text-center md:text-right">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold mb-2">
-                        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> <span data-i18n="bannerBadge">المعاملات بالدينار الجزائري (د.ج / DZD) مع حماية 100%</span>
+        <!-- Banner العرض المدهش -->
+        <div class="rounded-3xl bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800 p-6 md:p-8 shadow-2xl relative overflow-hidden">
+            <div class="absolute -left-10 -bottom-10 w-60 h-60 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
+                <div class="space-y-2 max-w-2xl">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold">
+                        <i data-lucide="shield-check" class="w-4 h-4"></i> <span data-i18n="bannerBadge">المعاملات بالدينار الجزائري (د.ج / DZD) مع حماية 100%</span>
                     </div>
-                    <h1 data-i18n="bannerTitle" class="text-xl md:text-2xl font-bold text-white">منصة الوسيط التجاري لبيع وشراء قطع غيار السيارات في الجزائر</h1>
-                    <p data-i18n="bannerDesc" class="text-slate-400 text-xs md:text-sm mt-1">نربط البائعين والمشترين مع ضمان اعتماد الإدارة للمنشورات وتأمين المبالغ حتى المعاينة.</p>
+                    <h1 data-i18n="bannerTitle" class="text-2xl md:text-3xl font-black text-white leading-tight">منصة الوسيط التجاري لبيع وشراء قطع غيار السيارات بالجزائر</h1>
+                    <p data-i18n="bannerDesc" class="text-slate-400 text-xs md:text-sm">نضمن حفظ أموال المشتري حتى الفحص والمعاينة مع توثيق البائعين والمنشورات.</p>
                 </div>
-                <div class="flex items-center gap-3 w-full md:w-auto justify-center">
-                    <button onclick="openCreatePostModal()" class="bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-600 text-white text-xs md:text-sm font-bold px-4 py-2.5 rounded-xl shadow-lg shadow-brand-500/25 transition flex items-center justify-center gap-2 w-full md:w-auto">
-                        <i data-lucide="plus-circle" class="w-4 h-4"></i> <span data-i18n="addPostBtn">إضافة إعلان قطعة جديد للبيع</span>
-                    </button>
-                </div>
+                <button onclick="openCreatePostModal()" class="w-full md:w-auto bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs md:text-sm px-6 py-3.5 rounded-2xl shadow-xl shadow-amber-500/10 transition flex items-center justify-center gap-2 flex-shrink-0">
+                    <i data-lucide="plus-circle" class="w-5 h-5"></i> <span data-i18n="addPostBtn">إضافة إعلان قطعة جديد</span>
+                </button>
             </div>
         </div>
 
         <!-- TAB 1: Catalog -->
         <section id="view-catalog" class="space-y-6">
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-lg space-y-4">
+            <div class="bg-slate-900/90 border border-slate-800/80 rounded-2xl p-4 shadow-xl backdrop-blur-md">
                 <div class="flex flex-col md:flex-row items-center gap-3">
                     <div class="relative flex-1 w-full">
+                        <input type="text" id="filter-keyword" oninput="applyFilters()" data-i18n-placeholder="searchPlaceholder" placeholder="ابحث باسم القطعة، الملاحظات..." class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl rtl:pr-10 ltr:pl-10 rtl:pl-4 ltr:pr-4 py-3 focus:outline-none focus:border-amber-500 transition">
                         <i data-lucide="search" class="w-4 h-4 absolute rtl:right-3.5 ltr:left-3.5 top-3.5 text-slate-400"></i>
-                        <input type="text" id="filter-keyword" oninput="applyFilters()" data-i18n-placeholder="searchPlaceholder" placeholder="ابحث باسم القطعة، الملاحظات..." class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-sm rounded-xl rtl:pr-10 rtl:pl-4 ltr:pl-10 ltr:pr-4 py-2.5 focus:outline-none focus:border-brand-500 transition">
                     </div>
-                    <select id="filter-brand" onchange="applyFilters()" class="w-full md:w-44 bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl px-3 py-2.5 focus:outline-none cursor-pointer">
+                    <select id="filter-brand" onchange="applyFilters()" class="w-full md:w-48 bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl px-3 py-3 focus:outline-none cursor-pointer">
                         <option value="" data-i18n="allBrands">جميع الماركات</option>
                         <option value="Renault">Renault</option>
                         <option value="Peugeot">Peugeot</option>
@@ -207,42 +208,94 @@
                         <option value="Hyundai">Hyundai</option>
                         <option value="Toyota">Toyota</option>
                     </select>
-                    <!-- قائمة الـ 58 ولاية للفلترة -->
-                    <select id="filter-wilaya" onchange="applyFilters()" class="w-full md:w-48 bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl px-3 py-2.5 focus:outline-none cursor-pointer">
+                    <select id="filter-wilaya" onchange="applyFilters()" class="w-full md:w-52 bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl px-3 py-3 focus:outline-none cursor-pointer">
                         <option value="" data-i18n="allWilayas">جميع الولايات (58)</option>
                     </select>
                 </div>
             </div>
 
-            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
         </section>
 
-        <!-- TAB 2: Messages -->
-        <section id="view-messages" class="hidden space-y-6">
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl min-h-[500px] flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-brand-600/20 text-brand-400 flex items-center justify-center font-bold">
-                                <i data-lucide="message-square" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h3 data-i18n="chatTitle" class="text-base font-bold text-white">المحادثات المباشرة</h3>
-                                <p data-i18n="chatDesc" class="text-xs text-slate-400">التواصل المباشر بين المشترين، البائعين والإدارة</p>
+        <!-- TAB 2: Messages (Messenger Style) -->
+        <section id="view-messages" class="hidden space-y-4">
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12 min-h-[550px]">
+                
+                <!-- قائمة المحادثات الجانبية المصغرة -->
+                <div class="md:col-span-4 border-l border-slate-800 bg-slate-950/50 p-4 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between pb-2 border-b border-slate-800">
+                            <h3 data-i18n="chatTitle" class="text-sm font-bold text-white flex items-center gap-2">
+                                <i data-lucide="message-circle" class="w-4 h-4 text-amber-400"></i> المحادثات النشطة
+                            </h3>
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        </div>
+                        
+                        <!-- محادثة افتراضية نشطة -->
+                        <div class="space-y-1">
+                            <div class="p-3 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center gap-3 cursor-pointer transition">
+                                <div class="relative">
+                                    <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs">
+                                        مو
+                                    </div>
+                                    <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-slate-950 rounded-full"></span>
+                                </div>
+                                <div class="overflow-hidden flex-1">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xs font-bold text-white truncate">مورّد قطع الجزائر</span>
+                                        <span class="text-[9px] text-slate-400">الآن</span>
+                                    </div>
+                                    <p class="text-[11px] text-slate-400 truncate">هل كمبروسر بيجو متوفر حالياً؟</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="text-xs text-slate-400"><span data-i18n="currentUser">المستخدم الحالي:</span> <span id="chat-current-user" class="text-amber-400 font-bold"></span></div>
                     </div>
 
-                    <div id="chat-messages-list" class="space-y-3 max-h-96 overflow-y-auto p-2"></div>
+                    <!-- معلومات المستخدم الحالي بالأسفل -->
+                    <div class="pt-3 border-t border-slate-800 flex items-center gap-2 text-xs text-slate-400">
+                        <span>المستخدم:</span>
+                        <span id="chat-current-user" class="text-amber-400 font-bold truncate"></span>
+                    </div>
                 </div>
 
-                <form onsubmit="handleSendMessage(event)" class="mt-4 pt-4 border-t border-slate-800 flex gap-2">
-                    <input type="text" id="chat-input-text" data-i18n-placeholder="chatInputPlaceholder" required placeholder="اكتب رسالتك هنا..." class="flex-1 bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-brand-500">
-                    <button type="submit" class="bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs px-5 py-3 rounded-xl transition flex items-center gap-1.5">
-                        <i data-lucide="send" class="w-4 h-4"></i> <span data-i18n="sendBtn">إرسال</span>
-                    </button>
-                </form>
+                <!-- منطقة الدردشة الرئيسية (Messenger Chat Box) -->
+                <div class="md:col-span-8 flex flex-col justify-between bg-slate-900 p-4 md:p-6">
+                    
+                    <!-- رأس المحادثة -->
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-slate-800 text-amber-400 flex items-center justify-center font-bold text-xs">
+                                🚗
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white">دعم سيارتي بروكر والوسيط المعتمد</h4>
+                                <span class="text-[10px] text-emerald-400 flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> متصل الآن لحماية الصفقات
+                                </span>
+                            </div>
+                        </div>
+                        <div class="text-slate-400 hover:text-white cursor-pointer p-2 rounded-xl bg-slate-800/50">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- صندوق الرسائل مع فقاعات التصميم الحديث -->
+                    <div id="chat-messages-list" class="space-y-3 max-h-[380px] overflow-y-auto p-2 pr-1 hide-scrollbar flex flex-col">
+                        <!-- يتم حقن الرسائل هنا برمجياً -->
+                    </div>
+
+                    <!-- نموذج كتابة وإرسال الرسالة -->
+                    <form onsubmit="handleSendMessage(event)" class="mt-4 pt-3 border-t border-slate-800 flex items-center gap-2">
+                        <button type="button" class="text-slate-400 hover:text-amber-400 p-2 rounded-xl bg-slate-950 border border-slate-800 transition">
+                            <i data-lucide="paperclip" class="w-4 h-4"></i>
+                        </button>
+                        <input type="text" id="chat-input-text" data-i18n-placeholder="chatInputPlaceholder" required placeholder="اكتب رسالتك أو استفسارك هنا..." class="flex-1 bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-2xl px-4 py-3 outline-none focus:border-amber-500 transition">
+                        <button type="submit" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs px-5 py-3 rounded-2xl transition flex items-center gap-1.5 shadow-lg shadow-amber-500/10">
+                            <i data-lucide="send" class="w-4 h-4"></i> <span data-i18n="sendBtn">إرسال</span>
+                        </button>
+                    </form>
+
+                </div>
             </div>
         </section>
 
@@ -260,7 +313,6 @@
                         <i data-lucide="plus" class="w-4 h-4"></i> <span data-i18n="addRatingBtn">إضافة تقييم جديد</span>
                     </button>
                 </div>
-
                 <div id="ratings-list-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
             </div>
         </section>
@@ -275,29 +327,6 @@
                     <h2 data-i18n="escrowTitle" class="text-2xl font-bold text-white">كيف يعمل نظام الضمان والوساطة المالي بالدينار الجزائري؟</h2>
                     <p data-i18n="escrowDesc" class="text-xs md:text-sm text-slate-400">نضمن عدم تحويل الأموال للمورد حتى يستلم المشتري القطعة وتكون متطابقة.</p>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl relative">
-                        <span class="text-3xl font-black text-brand-500/20 absolute rtl:left-3 ltr:right-3 top-2">01</span>
-                        <h3 data-i18n="escrowStep1Title" class="text-sm font-bold text-white mb-1">1. النشر والموافقة</h3>
-                        <p data-i18n="escrowStep1Desc" class="text-xs text-slate-400">ينشر البائع القطعة بسعر د.ج، وتراجعها الإدارة لتغيير الحالة إلى Approved.</p>
-                    </div>
-                    <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl relative">
-                        <span class="text-3xl font-black text-emerald-500/20 absolute rtl:left-3 ltr:right-3 top-2">02</span>
-                        <h3 data-i18n="escrowStep2Title" class="text-sm font-bold text-white mb-1">2. إيداع المبلغ</h3>
-                        <p data-i18n="escrowStep2Desc" class="text-xs text-slate-400">يدفع المشتري القيمة + عمولة الوساطة إلى حساب منصة "سيارتي بروكر".</p>
-                    </div>
-                    <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl relative">
-                        <span class="text-3xl font-black text-amber-500/20 absolute rtl:left-3 ltr:right-3 top-2">03</span>
-                        <h3 data-i18n="escrowStep3Title" class="text-sm font-bold text-white mb-1">3. المعاينة والشحن</h3>
-                        <p data-i18n="escrowStep3Desc" class="text-xs text-slate-400">يستلم المشتري القطعة ويعاينها للتأكد من سلامتها ومطابقتها.</p>
-                    </div>
-                    <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl relative">
-                        <span class="text-3xl font-black text-purple-500/20 absolute rtl:left-3 ltr:right-3 top-2">04</span>
-                        <h3 data-i18n="escrowStep4Title" class="text-sm font-bold text-white mb-1">4. الإفراج عن DZD</h3>
-                        <p data-i18n="escrowStep4Desc" class="text-xs text-slate-400">تحول المنصة مستحقات البائع بالدينار الجزائري وتقتطع نسبة الوساطة.</p>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -310,32 +339,15 @@
                             <span class="bg-red-500/20 text-red-400 text-[10px] font-bold px-2 py-0.5 rounded-md border border-red-500/30">Admin</span>
                             <h2 data-i18n="adminTitle" class="text-lg font-bold text-white">لوحة تحكم الأدمن (Admin Dashboard)</h2>
                         </div>
-                        <p class="text-xs text-slate-400 mt-0.5"><span data-i18n="adminEmail">البريد الإلكتروني للإدارة:</span> <span class="text-brand-400 font-mono">ounnashaithem3@gmail.com</span></p>
+                        <p class="text-xs text-slate-400 mt-0.5"><span data-i18n="adminEmail">البريد الإلكتروني للإدارة:</span> <span class="text-amber-400 font-mono">ounnashaithem3@gmail.com</span></p>
                     </div>
                 </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
-                        <span data-i18n="adminStatVol" class="text-xs text-slate-400 block mb-1">حجم التداولات عبر الوسيط</span>
-                        <span id="admin-stat-volume" class="text-2xl font-black text-white">0 DZD</span>
-                    </div>
-                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
-                        <span data-i18n="adminStatComm" class="text-xs text-slate-400 block mb-1">أرباح عمولة المنصة (8%)</span>
-                        <span id="admin-stat-commission" class="text-2xl font-black text-emerald-400">0 DZD</span>
-                    </div>
-                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
-                        <span data-i18n="adminStatPending" class="text-xs text-slate-400 block mb-1">طلبات المنشورات المعلقة</span>
-                        <span id="admin-stat-pending" class="text-2xl font-black text-amber-400">0</span>
-                    </div>
-                </div>
-
-                <h3 data-i18n="adminReqsTitle" class="text-sm font-bold text-white mb-3">إدارة طلبات اعتماد الإعلانات (post_requests)</h3>
                 <div id="admin-requests-list" class="space-y-3"></div>
             </div>
         </section>
-
     </main>
 
+    <!-- MODALS -->
     <!-- MODAL 1: OTP -->
     <div id="modal-otp" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
         <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-6 relative shadow-2xl space-y-4">
@@ -343,23 +355,18 @@
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
             <div class="text-center space-y-2">
-                <div class="w-12 h-12 rounded-full bg-brand-500/10 text-brand-400 flex items-center justify-center mx-auto">
+                <div class="w-12 h-12 rounded-full bg-amber-500/10 text-amber-400 flex items-center justify-center mx-auto">
                     <i data-lucide="mail-check" class="w-6 h-6"></i>
                 </div>
                 <h3 data-i18n="otpTitle" class="text-lg font-bold text-white">التحقق من البريد الإلكتروني</h3>
                 <p data-i18n="otpDesc" class="text-xs text-slate-400">تم إرسال رمز OTP لتأكيد الحساب.</p>
             </div>
-            <div class="bg-slate-950 border border-brand-500/30 rounded-xl p-3 text-xs text-slate-300 space-y-1">
-                <div class="flex justify-between items-center text-[10px] text-slate-500">
-                    <span>From: ounnashaithem3@gmail.com</span>
-                    <span>Now</span>
-                </div>
-                <div data-i18n="otpCodeLabel" class="font-semibold text-brand-400">رمز التفعيل الخاص بك:</div>
+            <div class="bg-slate-950 border border-amber-500/30 rounded-xl p-3 text-xs text-slate-300 space-y-1">
                 <div class="text-xl font-mono font-bold text-center text-amber-400 bg-slate-900 py-1.5 rounded-lg border border-slate-800" id="simulated-otp-code">8492</div>
             </div>
             <div class="space-y-3">
                 <input type="text" maxlength="4" id="otp-input" placeholder="0000" class="w-full text-center bg-slate-950 border border-slate-800 text-amber-400 font-mono text-xl py-2 rounded-xl outline-none">
-                <button onclick="verifyOtpCode()" data-i18n="otpVerifyBtn" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs py-3 rounded-xl transition">تأكيد البريد والدخول للمنصة</button>
+                <button onclick="verifyOtpCode()" data-i18n="otpVerifyBtn" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs py-3 rounded-xl transition">تأكيد البريد والدخول للمنصة</button>
             </div>
         </div>
     </div>
@@ -370,29 +377,27 @@
             <button onclick="closeModal('modal-create-post')" class="absolute rtl:left-4 ltr:right-4 top-4 text-slate-400 hover:text-white">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
-
             <h3 data-i18n="createPostTitle" class="text-base font-bold text-white border-b border-slate-800 pb-2">تقديم إعلان قطعة غيار جديد</h3>
-
             <form onsubmit="handleCreatePostSubmit(event)" class="space-y-3">
                 <div>
                     <label data-i18n="postTitleLabel" class="block text-[11px] font-semibold text-slate-300 mb-1">عنوان القطعة *</label>
-                    <input type="text" id="post-title" required class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl px-3 py-2 outline-none focus:border-brand-500">
+                    <input type="text" id="post-title" required class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl px-3 py-2 outline-none focus:border-amber-500">
                 </div>
                 <div>
                     <label data-i18n="postPriceLabel" class="block text-[11px] font-semibold text-slate-300 mb-1">السعر بالدينار الجزائري (DZD) *</label>
-                    <input type="number" id="post-price" required min="100" placeholder="15000" class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl px-3 py-2 outline-none focus:border-brand-500 font-mono">
+                    <input type="number" id="post-price" required min="100" placeholder="15000" class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl px-3 py-2 outline-none focus:border-amber-500 font-mono">
                 </div>
                 <div>
                     <label data-i18n="selectWilaya" class="block text-[11px] font-semibold text-slate-300 mb-1">اختر الولاية *</label>
-                    <select id="post-wilaya" required class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl px-3 py-2 outline-none focus:border-brand-500 cursor-pointer">
+                    <select id="post-wilaya" required class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl px-3 py-2 outline-none focus:border-amber-500 cursor-pointer">
                         <option value="">اختر الولاية</option>
                     </select>
                 </div>
                 <div>
                     <label data-i18n="postDescLabel" class="block text-[11px] font-semibold text-slate-300 mb-1">وصف تفصيلي للقطعة</label>
-                    <textarea id="post-description" rows="3" class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl p-3 outline-none focus:border-brand-500"></textarea>
+                    <textarea id="post-description" rows="3" class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl p-3 outline-none focus:border-amber-500"></textarea>
                 </div>
-                <button type="submit" data-i18n="createPostSubmit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-2.5 rounded-xl transition">إرسال الإعلان للأدمن</button>
+                <button type="submit" data-i18n="createPostSubmit" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs py-2.5 rounded-xl transition">إرسال الإعلان للأدمن</button>
             </form>
         </div>
     </div>
@@ -403,9 +408,7 @@
             <button onclick="closeModal('modal-add-rating')" class="absolute rtl:left-4 ltr:right-4 top-4 text-slate-400 hover:text-white">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
-
             <h3 data-i18n="addRatingTitle" class="text-base font-bold text-white border-b border-slate-800 pb-2">إضافة تقييم مستخدم</h3>
-
             <form onsubmit="handleAddRatingSubmit(event)" class="space-y-3">
                 <div>
                     <label data-i18n="ratingTargetLabel" class="block text-[11px] font-semibold text-slate-300 mb-1">اسم المورد أو المشتري *</label>
@@ -423,7 +426,7 @@
                 </div>
                 <div>
                     <label data-i18n="ratingReviewLabel" class="block text-[11px] font-semibold text-slate-300 mb-1">المراجعة والتعليق</label>
-                    <textarea id="rating-review" rows="3" required class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl p-3 outline-none focus:border-brand-500"></textarea>
+                    <textarea id="rating-review" rows="3" required class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl p-3 outline-none focus:border-amber-500"></textarea>
                 </div>
                 <button type="submit" data-i18n="ratingSubmit" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs py-2.5 rounded-xl transition">إرسال التقييم</button>
             </form>
@@ -436,7 +439,6 @@
             <button onclick="closeModal('modal-checkout')" class="absolute rtl:left-4 ltr:right-4 top-4 text-slate-400 hover:text-white">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
-
             <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
                 <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
                     <i data-lucide="shield-check" class="w-6 h-6"></i>
@@ -446,19 +448,26 @@
                     <p data-i18n="checkoutDesc" class="text-xs text-slate-400">حفظ المبلغ بالضمان المالي حتى استلام القطعة ومعاينتها</p>
                 </div>
             </div>
-
             <div id="checkout-details-body" class="space-y-3 text-xs"></div>
-
             <button onclick="confirmOrderPayment()" class="w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-bold text-sm py-3 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
                 <i data-lucide="lock" class="w-4 h-4"></i> <span data-i18n="checkoutConfirmBtn">تأكيد وحجز المبلغ بالضمان</span>
             </button>
         </div>
     </div>
 
-    <!-- Toast Container -->
-    <div id="toast-container" class="fixed top-20 rtl:right-4 ltr:left-4 z-50 space-y-2 pointer-events-none"></div>
+    <!-- MODAL 5: Product Details -->
+    <div id="modal-product-detail" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden overflow-y-auto">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-2xl p-6 relative shadow-2xl space-y-4 my-8">
+            <button onclick="closeModal('modal-product-detail')" class="absolute rtl:left-4 ltr:right-4 top-4 text-slate-400 hover:text-white z-10 bg-slate-950/60 p-1.5 rounded-full">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div id="product-detail-content" class="space-y-4"></div>
+        </div>
+    </div>
 
-    <!-- JS File -->
+    <!-- Toast Container -->
+    <div id="toast-container" class="fixed top-6 rtl:left-6 ltr:right-6 z-50 space-y-2 pointer-events-none"></div>
+
     <script src="scripte.js"></script>
 </body>
 </html>
